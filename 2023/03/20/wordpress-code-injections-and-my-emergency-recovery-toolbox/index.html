@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="max-image-preview:large">
+	<style>img:is([sizes="auto" i], [sizes^="auto," i]) { contain-intrinsic-size: 3000px 1500px }</style>
+	<title>WordPress code injections and my emergency recovery toolbox &ndash; aldavigdis.dev</title>
+<link rel="alternate" type="application/rss+xml" title="aldavigdis.dev &raquo; Feed" href="/feed/">
+<link rel="alternate" type="application/rss+xml" title="aldavigdis.dev &raquo; Comments Feed" href="/comments/feed/">
+<script>
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16.0.1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16.0.1\/svg\/","svgExt":".svg","source":{"concatemoji":"\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.8.3"}};
+/*! This file is auto-generated */
+!function(s,n){var o,i,e;function c(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function p(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data),a=(e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0),new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data));return t.every(function(e,t){return e===a[t]})}function u(e,t){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);for(var n=e.getImageData(16,16,1,1),a=0;a<n.data.length;a++)if(0!==n.data[a])return!1;return!0}function f(e,t,n,a){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\udde8\ud83c\uddf6","\ud83c\udde8\u200b\ud83c\uddf6")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!a(e,"\ud83e\udedf")}return!1}function g(e,t,n,a){var r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):s.createElement("canvas"),o=r.getContext("2d",{willReadFrequently:!0}),i=(o.textBaseline="top",o.font="600 32px Arial",{});return e.forEach(function(e){i[e]=t(o,e,n,a)}),i}function t(e){var t=s.createElement("script");t.src=e,t.defer=!0,s.head.appendChild(t)}"undefined"!=typeof Promise&&(o="wpEmojiSettingsSupports",i=["flag","emoji"],n.supports={everything:!0,everythingExceptFlag:!0},e=new Promise(function(e){s.addEventListener("DOMContentLoaded",e,{once:!0})}),new Promise(function(t){var n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+g.toString()+"("+[JSON.stringify(i),f.toString(),p.toString(),u.toString()].join(",")+"));",a=new Blob([e],{type:"text/javascript"}),r=new Worker(URL.createObjectURL(a),{name:"wpTestEmojiSupports"});return void(r.onmessage=function(e){c(n=e.data),r.terminate(),t(n)})}catch(e){}c(n=g(i,f,p,u))}t(n)}).then(function(e){for(var t in e)n.supports[t]=e[t],n.supports.everything=n.supports.everything&&n.supports[t],"flag"!==t&&(n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&n.supports[t]);n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&!n.supports.flag,n.DOMReady=!1,n.readyCallback=function(){n.DOMReady=!0}}).then(function(){return e}).then(function(){var e;n.supports.everything||(n.readyCallback(),(e=n.source||{}).concatemoji?t(e.concatemoji):e.wpemoji&&e.twemoji&&(t(e.twemoji),t(e.wpemoji)))}))}((window,document),window._wpemojiSettings);
+</script>
+<style id="wp-block-site-title-inline-css">
+.wp-block-site-title{box-sizing:border-box}.wp-block-site-title :where(a){color:inherit;font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;letter-spacing:inherit;line-height:inherit;text-decoration:inherit}
+</style>
+<style id="wp-block-template-part-theme-inline-css">
+:root :where(.wp-block-template-part.has-background){margin-bottom:0;margin-top:0;padding:1.25em 2.375em}
+</style>
+<style id="wp-block-post-title-inline-css">
+.wp-block-post-title{box-sizing:border-box;word-break:break-word}.wp-block-post-title :where(a){display:inline-block;font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;letter-spacing:inherit;line-height:inherit;text-decoration:inherit}
+</style>
+<style id="wp-block-post-date-inline-css">
+.wp-block-post-date{box-sizing:border-box}
+</style>
+<style id="wp-block-post-featured-image-inline-css">
+.wp-block-post-featured-image{margin-left:0;margin-right:0}.wp-block-post-featured-image a{display:block;height:100%}.wp-block-post-featured-image :where(img){box-sizing:border-box;height:auto;max-width:100%;vertical-align:bottom;width:100%}.wp-block-post-featured-image.alignfull img,.wp-block-post-featured-image.alignwide img{width:100%}.wp-block-post-featured-image .wp-block-post-featured-image__overlay.has-background-dim{background-color:#000;inset:0;position:absolute}.wp-block-post-featured-image{position:relative}.wp-block-post-featured-image .wp-block-post-featured-image__overlay.has-background-gradient{background-color:initial}.wp-block-post-featured-image .wp-block-post-featured-image__overlay.has-background-dim-0{opacity:0}.wp-block-post-featured-image .wp-block-post-featured-image__overlay.has-background-dim-10{opacity:.1}.wp-block-post-featured-image .wp-block-post-featured-image__overlay.has-background-dim-20{opacity:.2}.wp-block-post-featured-image .wp-block-post-featured-image__overlay.has-background-dim-30{opacity:.3}.wp-block-post-featured-image .wp-block-post-featured-image__overlay.has-background-dim-40{opacity:.4}.wp-block-post-featured-image .wp-block-post-featured-image__overlay.has-background-dim-50{opacity:.5}.wp-block-post-featured-image .wp-block-post-featured-image__overlay.has-background-dim-60{opacity:.6}.wp-block-post-featured-image .wp-block-post-featured-image__overlay.has-background-dim-70{opacity:.7}.wp-block-post-featured-image .wp-block-post-featured-image__overlay.has-background-dim-80{opacity:.8}.wp-block-post-featured-image .wp-block-post-featured-image__overlay.has-background-dim-90{opacity:.9}.wp-block-post-featured-image .wp-block-post-featured-image__overlay.has-background-dim-100{opacity:1}.wp-block-post-featured-image:where(.alignleft,.alignright){width:100%}
+</style>
+<style id="wp-block-paragraph-inline-css">
+.is-small-text{font-size:.875em}.is-regular-text{font-size:1em}.is-large-text{font-size:2.25em}.is-larger-text{font-size:3em}.has-drop-cap:not(:focus):first-letter{float:left;font-size:8.4em;font-style:normal;font-weight:100;line-height:.68;margin:.05em .1em 0 0;text-transform:uppercase}body.rtl .has-drop-cap:not(:focus):first-letter{float:none;margin-left:.1em}p.has-drop-cap.has-background{overflow:hidden}:root :where(p.has-background){padding:1.25em 2.375em}:where(p.has-text-color:not(.has-link-color)) a{color:inherit}p.has-text-align-left[style*="writing-mode:vertical-lr"],p.has-text-align-right[style*="writing-mode:vertical-rl"]{rotate:180deg}
+</style>
+<style id="wp-block-image-inline-css">
+.wp-block-image>a,.wp-block-image>figure>a{display:inline-block}.wp-block-image img{box-sizing:border-box;height:auto;max-width:100%;vertical-align:bottom}@media not (prefers-reduced-motion){.wp-block-image img.hide{visibility:hidden}.wp-block-image img.show{animation:show-content-image .4s}}.wp-block-image[style*=border-radius] img,.wp-block-image[style*=border-radius]>a{border-radius:inherit}.wp-block-image.has-custom-border img{box-sizing:border-box}.wp-block-image.aligncenter{text-align:center}.wp-block-image.alignfull>a,.wp-block-image.alignwide>a{width:100%}.wp-block-image.alignfull img,.wp-block-image.alignwide img{height:auto;width:100%}.wp-block-image .aligncenter,.wp-block-image .alignleft,.wp-block-image .alignright,.wp-block-image.aligncenter,.wp-block-image.alignleft,.wp-block-image.alignright{display:table}.wp-block-image .aligncenter>figcaption,.wp-block-image .alignleft>figcaption,.wp-block-image .alignright>figcaption,.wp-block-image.aligncenter>figcaption,.wp-block-image.alignleft>figcaption,.wp-block-image.alignright>figcaption{caption-side:bottom;display:table-caption}.wp-block-image .alignleft{float:left;margin:.5em 1em .5em 0}.wp-block-image .alignright{float:right;margin:.5em 0 .5em 1em}.wp-block-image .aligncenter{margin-left:auto;margin-right:auto}.wp-block-image :where(figcaption){margin-bottom:1em;margin-top:.5em}.wp-block-image.is-style-circle-mask img{border-radius:9999px}@supports ((-webkit-mask-image:none) or (mask-image:none)) or (-webkit-mask-image:none){.wp-block-image.is-style-circle-mask img{border-radius:0;-webkit-mask-image:url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="50"/>');mask-image:url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="50"/>');mask-mode:alpha;-webkit-mask-position:center;mask-position:center;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-size:contain;mask-size:contain}}:root :where(.wp-block-image.is-style-rounded img,.wp-block-image .is-style-rounded img){border-radius:9999px}.wp-block-image figure{margin:0}.wp-lightbox-container{display:flex;flex-direction:column;position:relative}.wp-lightbox-container img{cursor:zoom-in}.wp-lightbox-container img:hover+button{opacity:1}.wp-lightbox-container button{align-items:center;-webkit-backdrop-filter:blur(16px) saturate(180%);backdrop-filter:blur(16px) saturate(180%);background-color:#5a5a5a40;border:none;border-radius:4px;cursor:zoom-in;display:flex;height:20px;justify-content:center;opacity:0;padding:0;position:absolute;right:16px;text-align:center;top:16px;width:20px;z-index:100}@media not (prefers-reduced-motion){.wp-lightbox-container button{transition:opacity .2s ease}}.wp-lightbox-container button:focus-visible{outline:3px auto #5a5a5a40;outline:3px auto -webkit-focus-ring-color;outline-offset:3px}.wp-lightbox-container button:hover{cursor:pointer;opacity:1}.wp-lightbox-container button:focus{opacity:1}.wp-lightbox-container button:focus,.wp-lightbox-container button:hover,.wp-lightbox-container button:not(:hover):not(:active):not(.has-background){background-color:#5a5a5a40;border:none}.wp-lightbox-overlay{box-sizing:border-box;cursor:zoom-out;height:100vh;left:0;overflow:hidden;position:fixed;top:0;visibility:hidden;width:100%;z-index:100000}.wp-lightbox-overlay .close-button{align-items:center;cursor:pointer;display:flex;justify-content:center;min-height:40px;min-width:40px;padding:0;position:absolute;right:calc(env(safe-area-inset-right) + 16px);top:calc(env(safe-area-inset-top) + 16px);z-index:5000000}.wp-lightbox-overlay .close-button:focus,.wp-lightbox-overlay .close-button:hover,.wp-lightbox-overlay .close-button:not(:hover):not(:active):not(.has-background){background:none;border:none}.wp-lightbox-overlay .lightbox-image-container{height:var(--wp--lightbox-container-height);left:50%;overflow:hidden;position:absolute;top:50%;transform:translate(-50%,-50%);transform-origin:top left;width:var(--wp--lightbox-container-width);z-index:9999999999}.wp-lightbox-overlay .wp-block-image{align-items:center;box-sizing:border-box;display:flex;height:100%;justify-content:center;margin:0;position:relative;transform-origin:0 0;width:100%;z-index:3000000}.wp-lightbox-overlay .wp-block-image img{height:var(--wp--lightbox-image-height);min-height:var(--wp--lightbox-image-height);min-width:var(--wp--lightbox-image-width);width:var(--wp--lightbox-image-width)}.wp-lightbox-overlay .wp-block-image figcaption{display:none}.wp-lightbox-overlay button{background:none;border:none}.wp-lightbox-overlay .scrim{background-color:#fff;height:100%;opacity:.9;position:absolute;width:100%;z-index:2000000}.wp-lightbox-overlay.active{visibility:visible}@media not (prefers-reduced-motion){.wp-lightbox-overlay.active{animation:turn-on-visibility .25s both}.wp-lightbox-overlay.active img{animation:turn-on-visibility .35s both}.wp-lightbox-overlay.show-closing-animation:not(.active){animation:turn-off-visibility .35s both}.wp-lightbox-overlay.show-closing-animation:not(.active) img{animation:turn-off-visibility .25s both}.wp-lightbox-overlay.zoom.active{animation:none;opacity:1;visibility:visible}.wp-lightbox-overlay.zoom.active .lightbox-image-container{animation:lightbox-zoom-in .4s}.wp-lightbox-overlay.zoom.active .lightbox-image-container img{animation:none}.wp-lightbox-overlay.zoom.active .scrim{animation:turn-on-visibility .4s forwards}.wp-lightbox-overlay.zoom.show-closing-animation:not(.active){animation:none}.wp-lightbox-overlay.zoom.show-closing-animation:not(.active) .lightbox-image-container{animation:lightbox-zoom-out .4s}.wp-lightbox-overlay.zoom.show-closing-animation:not(.active) .lightbox-image-container img{animation:none}.wp-lightbox-overlay.zoom.show-closing-animation:not(.active) .scrim{animation:turn-off-visibility .4s forwards}}@keyframes show-content-image{0%{visibility:hidden}99%{visibility:hidden}to{visibility:visible}}@keyframes turn-on-visibility{0%{opacity:0}to{opacity:1}}@keyframes turn-off-visibility{0%{opacity:1;visibility:visible}99%{opacity:0;visibility:visible}to{opacity:0;visibility:hidden}}@keyframes lightbox-zoom-in{0%{transform:translate(calc((-100vw + var(--wp--lightbox-scrollbar-width))/2 + var(--wp--lightbox-initial-left-position)),calc(-50vh + var(--wp--lightbox-initial-top-position))) scale(var(--wp--lightbox-scale))}to{transform:translate(-50%,-50%) scale(1)}}@keyframes lightbox-zoom-out{0%{transform:translate(-50%,-50%) scale(1);visibility:visible}99%{visibility:visible}to{transform:translate(calc((-100vw + var(--wp--lightbox-scrollbar-width))/2 + var(--wp--lightbox-initial-left-position)),calc(-50vh + var(--wp--lightbox-initial-top-position))) scale(var(--wp--lightbox-scale));visibility:hidden}}
+</style>
+<style id="wp-block-image-theme-inline-css">
+:root :where(.wp-block-image figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme :root :where(.wp-block-image figcaption){color:#ffffffa6}.wp-block-image{margin:0 0 1em}
+</style>
+<style id="wp-block-heading-inline-css">
+h1.has-background,h2.has-background,h3.has-background,h4.has-background,h5.has-background,h6.has-background{padding:1.25em 2.375em}h1.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h1.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h2.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h2.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h3.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h3.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h4.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h4.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h5.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h5.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h6.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h6.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]){rotate:180deg}
+</style>
+<style id="wp-block-group-inline-css">
+.wp-block-group{box-sizing:border-box}:where(.wp-block-group.wp-block-group-is-layout-constrained){position:relative}
+</style>
+<style id="wp-block-group-theme-inline-css">
+:where(.wp-block-group.has-background){padding:1.25em 2.375em}
+</style>
+<style id="wp-block-list-inline-css">
+ol,ul{box-sizing:border-box}:root :where(.wp-block-list.has-background){padding:1.25em 2.375em}
+</style>
+<style id="wp-block-code-inline-css">
+.wp-block-code{box-sizing:border-box}.wp-block-code code{
+  /*!rtl:begin:ignore*/direction:ltr;display:block;font-family:inherit;overflow-wrap:break-word;text-align:initial;white-space:pre-wrap
+  /*!rtl:end:ignore*/}
+</style>
+<style id="wp-block-code-theme-inline-css">
+.wp-block-code{border:1px solid #ccc;border-radius:4px;font-family:Menlo,Consolas,monaco,monospace;padding:.8em 1em}
+</style>
+<style id="wp-block-post-content-inline-css">
+.wp-block-post-content{display:flow-root}
+</style>
+<style id="wp-block-post-author-inline-css">
+.wp-block-post-author{box-sizing:border-box;display:flex;flex-wrap:wrap}.wp-block-post-author__byline{font-size:.5em;margin-bottom:0;margin-top:0;width:100%}.wp-block-post-author__avatar{margin-right:1em}.wp-block-post-author__bio{font-size:.7em;margin-bottom:.7em}.wp-block-post-author__content{flex-basis:0;flex-grow:1}.wp-block-post-author__name{margin:0}
+</style>
+<style id="wp-emoji-styles-inline-css">
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+</style>
+<style id="wp-block-library-inline-css">
+:root{--wp-admin-theme-color:#007cba;--wp-admin-theme-color--rgb:0,124,186;--wp-admin-theme-color-darker-10:#006ba1;--wp-admin-theme-color-darker-10--rgb:0,107,161;--wp-admin-theme-color-darker-20:#005a87;--wp-admin-theme-color-darker-20--rgb:0,90,135;--wp-admin-border-width-focus:2px;--wp-block-synced-color:#7a00df;--wp-block-synced-color--rgb:122,0,223;--wp-bound-block-color:var(--wp-block-synced-color)}@media (min-resolution:192dpi){:root{--wp-admin-border-width-focus:1.5px}}.wp-element-button{cursor:pointer}:root{--wp--preset--font-size--normal:16px;--wp--preset--font-size--huge:42px}:root .has-very-light-gray-background-color{background-color:#eee}:root .has-very-dark-gray-background-color{background-color:#313131}:root .has-very-light-gray-color{color:#eee}:root .has-very-dark-gray-color{color:#313131}:root .has-vivid-green-cyan-to-vivid-cyan-blue-gradient-background{background:linear-gradient(135deg,#00d084,#0693e3)}:root .has-purple-crush-gradient-background{background:linear-gradient(135deg,#34e2e4,#4721fb 50%,#ab1dfe)}:root .has-hazy-dawn-gradient-background{background:linear-gradient(135deg,#faaca8,#dad0ec)}:root .has-subdued-olive-gradient-background{background:linear-gradient(135deg,#fafae1,#67a671)}:root .has-atomic-cream-gradient-background{background:linear-gradient(135deg,#fdd79a,#004a59)}:root .has-nightshade-gradient-background{background:linear-gradient(135deg,#330968,#31cdcf)}:root .has-midnight-gradient-background{background:linear-gradient(135deg,#020381,#2874fc)}.has-regular-font-size{font-size:1em}.has-larger-font-size{font-size:2.625em}.has-normal-font-size{font-size:var(--wp--preset--font-size--normal)}.has-huge-font-size{font-size:var(--wp--preset--font-size--huge)}.has-text-align-center{text-align:center}.has-text-align-left{text-align:left}.has-text-align-right{text-align:right}#end-resizable-editor-section{display:none}.aligncenter{clear:both}.items-justified-left{justify-content:flex-start}.items-justified-center{justify-content:center}.items-justified-right{justify-content:flex-end}.items-justified-space-between{justify-content:space-between}.screen-reader-text{border:0;clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;word-wrap:normal!important}.screen-reader-text:focus{background-color:#ddd;clip-path:none;color:#444;display:block;font-size:1em;height:auto;left:5px;line-height:normal;padding:15px 23px 14px;text-decoration:none;top:5px;width:auto;z-index:100000}html :where(.has-border-color){border-style:solid}html :where([style*=border-top-color]){border-top-style:solid}html :where([style*=border-right-color]){border-right-style:solid}html :where([style*=border-bottom-color]){border-bottom-style:solid}html :where([style*=border-left-color]){border-left-style:solid}html :where([style*=border-width]){border-style:solid}html :where([style*=border-top-width]){border-top-style:solid}html :where([style*=border-right-width]){border-right-style:solid}html :where([style*=border-bottom-width]){border-bottom-style:solid}html :where([style*=border-left-width]){border-left-style:solid}html :where(img[class*=wp-image-]){height:auto;max-width:100%}:where(figure){margin:0 0 1em}html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:var(--wp-admin--admin-bar--height,0px)}@media screen and (max-width:600px){html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:0px}}
+</style>
+<link rel="stylesheet" id="aldatheme_style-css" href="/wp-content/themes/aldatheme/style.css?ver=0.1.4-2025-10-06" media="all">
+<style id="global-styles-inline-css">
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--color--almost-black: #333;--wp--preset--color--light-grey: #F0F0F4;--wp--preset--color--grey: #ccc;--wp--preset--color--dark-grey: #555;--wp--preset--color--magenta: #dc68dc;--wp--preset--color--magenta-alt: #dc68a2;--wp--preset--color--orange: #dca268;--wp--preset--color--green: #a2dc68;--wp--preset--color--pastel-magenta: #fff0ff;--wp--preset--color--pastel-magenta-alt: #fff0f8;--wp--preset--color--pastel-orange: #fff8f0;--wp--preset--color--pastel-yellow: #fffff0;--wp--preset--color--pastel-green: #f8fff0;--wp--preset--color--dark-magenta: #6a256a;--wp--preset--color--dark-magenta-alt: #6a2548;--wp--preset--color--dark-orange: #6a4825;--wp--preset--color--dark-yellow: #6a6a25;--wp--preset--color--dark-green: #486a25;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--gradient--tequila-sunrise: linear-gradient(var(--wp--preset--color--magenta-alt) 33%, var(--wp--preset--color--orange) 133% );--wp--preset--gradient--queer-cocktail: linear-gradient(var(--wp--preset--color--magenta-alt) 0%, var(--wp--preset--color--magenta) 100%);--wp--preset--font-size--small: 12px;--wp--preset--font-size--medium: 16px;--wp--preset--font-size--large: 42px;--wp--preset--font-size--x-large: 72px;--wp--preset--font-family--libre-baskerville: Libre Baskerville, serif;--wp--preset--font-family--bitter: Bitter, serif;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:root { --wp--style--global--content-size: 840px;--wp--style--global--wide-size: 1100px; }:where(body) { margin: 0; }.wp-site-blocks > .alignleft { float: left; margin-right: 2em; }.wp-site-blocks > .alignright { float: right; margin-left: 2em; }.wp-site-blocks > .aligncenter { justify-content: center; margin-left: auto; margin-right: auto; }:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}.is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}.is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}.is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}.is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}.is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}body{padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px;}a:where(:not(.wp-element-button)){text-decoration: underline;}:root :where(.wp-element-button, .wp-block-button__link){background-color: #32373c;border-width: 0;color: #fff;font-family: inherit;font-size: inherit;line-height: inherit;padding: calc(0.667em + 2px) calc(1.333em + 2px);text-decoration: none;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-almost-black-color{color: var(--wp--preset--color--almost-black) !important;}.has-light-grey-color{color: var(--wp--preset--color--light-grey) !important;}.has-grey-color{color: var(--wp--preset--color--grey) !important;}.has-dark-grey-color{color: var(--wp--preset--color--dark-grey) !important;}.has-magenta-color{color: var(--wp--preset--color--magenta) !important;}.has-magenta-alt-color{color: var(--wp--preset--color--magenta-alt) !important;}.has-orange-color{color: var(--wp--preset--color--orange) !important;}.has-green-color{color: var(--wp--preset--color--green) !important;}.has-pastel-magenta-color{color: var(--wp--preset--color--pastel-magenta) !important;}.has-pastel-magenta-alt-color{color: var(--wp--preset--color--pastel-magenta-alt) !important;}.has-pastel-orange-color{color: var(--wp--preset--color--pastel-orange) !important;}.has-pastel-yellow-color{color: var(--wp--preset--color--pastel-yellow) !important;}.has-pastel-green-color{color: var(--wp--preset--color--pastel-green) !important;}.has-dark-magenta-color{color: var(--wp--preset--color--dark-magenta) !important;}.has-dark-magenta-alt-color{color: var(--wp--preset--color--dark-magenta-alt) !important;}.has-dark-orange-color{color: var(--wp--preset--color--dark-orange) !important;}.has-dark-yellow-color{color: var(--wp--preset--color--dark-yellow) !important;}.has-dark-green-color{color: var(--wp--preset--color--dark-green) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-almost-black-background-color{background-color: var(--wp--preset--color--almost-black) !important;}.has-light-grey-background-color{background-color: var(--wp--preset--color--light-grey) !important;}.has-grey-background-color{background-color: var(--wp--preset--color--grey) !important;}.has-dark-grey-background-color{background-color: var(--wp--preset--color--dark-grey) !important;}.has-magenta-background-color{background-color: var(--wp--preset--color--magenta) !important;}.has-magenta-alt-background-color{background-color: var(--wp--preset--color--magenta-alt) !important;}.has-orange-background-color{background-color: var(--wp--preset--color--orange) !important;}.has-green-background-color{background-color: var(--wp--preset--color--green) !important;}.has-pastel-magenta-background-color{background-color: var(--wp--preset--color--pastel-magenta) !important;}.has-pastel-magenta-alt-background-color{background-color: var(--wp--preset--color--pastel-magenta-alt) !important;}.has-pastel-orange-background-color{background-color: var(--wp--preset--color--pastel-orange) !important;}.has-pastel-yellow-background-color{background-color: var(--wp--preset--color--pastel-yellow) !important;}.has-pastel-green-background-color{background-color: var(--wp--preset--color--pastel-green) !important;}.has-dark-magenta-background-color{background-color: var(--wp--preset--color--dark-magenta) !important;}.has-dark-magenta-alt-background-color{background-color: var(--wp--preset--color--dark-magenta-alt) !important;}.has-dark-orange-background-color{background-color: var(--wp--preset--color--dark-orange) !important;}.has-dark-yellow-background-color{background-color: var(--wp--preset--color--dark-yellow) !important;}.has-dark-green-background-color{background-color: var(--wp--preset--color--dark-green) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-almost-black-border-color{border-color: var(--wp--preset--color--almost-black) !important;}.has-light-grey-border-color{border-color: var(--wp--preset--color--light-grey) !important;}.has-grey-border-color{border-color: var(--wp--preset--color--grey) !important;}.has-dark-grey-border-color{border-color: var(--wp--preset--color--dark-grey) !important;}.has-magenta-border-color{border-color: var(--wp--preset--color--magenta) !important;}.has-magenta-alt-border-color{border-color: var(--wp--preset--color--magenta-alt) !important;}.has-orange-border-color{border-color: var(--wp--preset--color--orange) !important;}.has-green-border-color{border-color: var(--wp--preset--color--green) !important;}.has-pastel-magenta-border-color{border-color: var(--wp--preset--color--pastel-magenta) !important;}.has-pastel-magenta-alt-border-color{border-color: var(--wp--preset--color--pastel-magenta-alt) !important;}.has-pastel-orange-border-color{border-color: var(--wp--preset--color--pastel-orange) !important;}.has-pastel-yellow-border-color{border-color: var(--wp--preset--color--pastel-yellow) !important;}.has-pastel-green-border-color{border-color: var(--wp--preset--color--pastel-green) !important;}.has-dark-magenta-border-color{border-color: var(--wp--preset--color--dark-magenta) !important;}.has-dark-magenta-alt-border-color{border-color: var(--wp--preset--color--dark-magenta-alt) !important;}.has-dark-orange-border-color{border-color: var(--wp--preset--color--dark-orange) !important;}.has-dark-yellow-border-color{border-color: var(--wp--preset--color--dark-yellow) !important;}.has-dark-green-border-color{border-color: var(--wp--preset--color--dark-green) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-tequila-sunrise-gradient-background{background: var(--wp--preset--gradient--tequila-sunrise) !important;}.has-queer-cocktail-gradient-background{background: var(--wp--preset--gradient--queer-cocktail) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}.has-libre-baskerville-font-family{font-family: var(--wp--preset--font-family--libre-baskerville) !important;}.has-bitter-font-family{font-family: var(--wp--preset--font-family--bitter) !important;}
+</style>
+<style id="wp-block-template-skip-link-inline-css">
+
+		.skip-link.screen-reader-text {
+			border: 0;
+			clip-path: inset(50%);
+			height: 1px;
+			margin: -1px;
+			overflow: hidden;
+			padding: 0;
+			position: absolute !important;
+			width: 1px;
+			word-wrap: normal !important;
+		}
+
+		.skip-link.screen-reader-text:focus {
+			background-color: #eee;
+			clip-path: none;
+			color: #444;
+			display: block;
+			font-size: 1em;
+			height: auto;
+			left: 5px;
+			line-height: normal;
+			padding: 15px 23px 14px;
+			text-decoration: none;
+			top: 5px;
+			width: auto;
+			z-index: 100000;
+		}
+</style>
+<link rel="stylesheet" id="mkaz-code-syntax-prism-css-css" href="/wp-content/plugins/code-syntax-block/assets/prism-a11y-dark.css?ver=1727704537" media="all">
+<link rel="https://api.w.org/" href="/wp-json/"><link rel="alternate" title="JSON" type="application/json" href="/wp-json/wp/v2/posts/71"><link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd">
+<meta name="generator" content="WordPress 6.8.3">
+<link rel="canonical" href="/2023/03/20/wordpress-code-injections-and-my-emergency-recovery-toolbox/">
+<link rel="shortlink" href="/?p=71">
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="/wp-json/oembed/1.0/embed?url=https%3A%2F%2F%2F2023%2F03%2F20%2Fwordpress-code-injections-and-my-emergency-recovery-toolbox%2F">
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="/wp-json/oembed/1.0/embed?url=https%3A%2F%2F%2F2023%2F03%2F20%2Fwordpress-code-injections-and-my-emergency-recovery-toolbox%2F&amp;format=xml">
+</head>
+
+<body class="wp-singular post-template-default single single-post postid-71 single-format-standard wp-embed-responsive wp-theme-aldatheme">
+
+<div class="wp-site-blocks"><header class="site-header wp-block-template-part"><p class="wp-block-site-title has-large-font-size"><a href="/" target="_self" rel="home">aldavigdis.dev</a></p></header>
+
+
+    <article class="wp-block-group main-content is-layout-flow wp-block-group-is-layout-flow">
+    <h2 class="wp-block-post-title">WordPress code injections and my emergency recovery toolbox</h2>
+    
+    <div class="wp-block-post-date"><time datetime="2023-03-20T11:49:22+00:00">March 20, 2023</time></div>
+    
+    
+    
+    <div class="entry-content wp-block-post-content is-layout-flow wp-block-post-content-is-layout-flow">
+<p>Anyone who has had a long enough conversation with me about my work knows that as someone who offers security and quality auditing services for WordPress sites, it tends to feel like being the only dentist in a town where nobody brushes their teeth or has their bi-annual check-up.</p>
+
+
+
+<p>For many digital agencies and site builders out there, pre-emptive security &mdash; which is something that I would be happier to do than emergency disaster recovery &mdash; is hardly even an afterthought and using the same dentist analogy as above, I end up pulling more figurative teeth than I&rsquo;d be happy to admit.</p>
+
+
+
+<p>WordPress sites experience security breaches all the time, sometimes they go under our noses, as a malicious actor gets your site&rsquo;s administrative password and steals your customer database for the past 5 years and your list of WooCommerce sales or hijacks your login credentials to use them elsewhere.</p>
+
+
+
+<p>Sometimes your whole site gets hijacked or ends up as good as ruined.</p>
+
+
+
+<p>It is the small business owners who end up being the most common target those breaches and attacks, because malicious actors know they are the easiest ones to get.</p>
+
+
+
+<p>The most common WordPress security issues that arrive on my desk are the results of code injections. In fact, a large part of my income for a while was because of a remote code execution vulnerability in a single WordPress plugin that a local agency had kept as a part of their &ldquo;standard package&rdquo; of 20 or so relatively unnecessary plugins.</p>
+
+
+
+<figure class="wp-block-image alignwide size-large"><img fetchpriority="high" decoding="async" width="1024" height="739" src="/wp-content/uploads/2023/03/4CIG_unit_Britsh_Railwys_Sthn_Region_76620_1974-1-1024x739.jpg" alt="" class="wp-image-154" srcset="/wp-content/uploads/2023/03/4CIG_unit_Britsh_Railwys_Sthn_Region_76620_1974-1-1024x739.jpg 1024w, /wp-content/uploads/2023/03/4CIG_unit_Britsh_Railwys_Sthn_Region_76620_1974-1-300x217.jpg 300w, /wp-content/uploads/2023/03/4CIG_unit_Britsh_Railwys_Sthn_Region_76620_1974-1-768x554.jpg 768w, /wp-content/uploads/2023/03/4CIG_unit_Britsh_Railwys_Sthn_Region_76620_1974-1.jpg 1079w" sizes="(max-width: 1024px) 100vw, 1024px"><figcaption class="wp-element-caption">Negligence can result in real wrecks like this runaway train. (TomMartyn 1974, Wikimedia Commons CC BY-SA)</figcaption></figure>
+
+
+
+<h2 class="wp-block-heading">So what are code injections anyway?</h2>
+
+
+
+<p>According to the WordPress project&rsquo;s own security guidelines (namely the article <a rel="noreferrer noopener" href="https://wordpress.org/documentation/article/hardening-wordpress/" data-type="URL" data-id="https://wordpress.org/documentation/article/hardening-wordpress/" target="_blank">Hardening WordPress</a>), WordPress needs write access to itself in order to run automatic updates which is an unfortunate side effect of traditional PHP web hosting, dating back to the 90&rsquo;s.</p>
+
+
+
+<p>For clarification, this is not the fault of web hosting providers, but the outdated policies of the WordPress project leadership itself, emphasising portability and beginner friendliness above professional best practices, tooting a default configuration and system requirements that really need to be reconsidered.</p>
+
+
+
+<p>The need for such lax file permissions in WordPress means that if your website has a remote code execution vulnerability in one of its themes or plugins, it is likely that anyone on the internet who has the intent to do so can expand from that security hole and get in.</p>
+
+
+
+<p>This ranges from malicious actors placing their own ads on your site (or replacing your whole site with ads and scams), collecting login credentials or sending themselves a copy of the database, including all the information in there.</p>
+
+
+
+<p>Secondly, WordPress allows its administrative users to open up and use the Plugin Editor to modify files within the WordPress stack by default, which is a horrible idea from the security perspective, so a single case of a leaked password can let an outsider inject code into your site. (Hint: This can be disabled by setting the constant <code>DISALLOW_FILE_EDIT</code> to <code>true</code> in <code>wp-config.php</code>).</p>
+
+
+
+<p>Less common ways of things going south are access credentials to your hosting provider going astray and security vulnerabilities spreading between sites owned by the same account on the same web server, which can have the same results.</p>
+
+
+
+<h2 class="wp-block-heading">Some considerations</h2>
+
+
+
+<p>One thing to keep in mind here is that code injections and other security breaches usually do not start with your website going down or starting to glitch randomly all of a sudden. That is simply the end stage and things may have been brewing for a long time.</p>
+
+
+
+<p>Sometimes even for months.</p>
+
+
+
+<p>When it comes to most WordPress sites getting breached, there are usually some automated processes involved in addition to malicious code being injected in seemingly random locations. Those doing the work here are usually foot soldiers with little training or knowledge.</p>
+
+
+
+<p>Those in charge of the breach want to keep your site running while they conduct their own business of stealing information that can then be used for scamming your customers, breaking into their accounts elsewhere etc.</p>
+
+
+
+<p>In the case of well known and heavily exploited vulnerabilities letting outsiders in, you may even have more than one malicious party wreaking havoc on your site.</p>
+
+
+
+<p>If your website is vulnerable, then it is guaranteed to be breached &mdash; and it doesn&rsquo;t matter if you&rsquo;re a government agency, a San Francisco tech company with thousands of employees, a bike shop in Berlin or a roller derby team from Reykjavik.</p>
+
+
+
+<p>There are even search engines out there specialised in exposing vulnerabilities of websites and other online services ranging from security cameras to websites running on systems like WordPress and one of them could be yours.</p>
+
+
+
+<h2 class="wp-block-heading">If a WordPress site suddenly starts working again, it hasn&rsquo;t been &ldquo;unhacked&rdquo;</h2>
+
+
+
+<p>Needless to say, breached WordPress sites can come back online as suddenly as they went offline after an automated update or after someone deleted a line of code they found in one of the core files in the WordPress installation.</p>
+
+
+
+<p>You may think this is a good thing, but any malicious actor wants to keep your site alive as they know they can continue to wreak havoc, steal personally identifiable information and destabilise your business.</p>
+
+
+
+<p>At least have your site examined by a specialist, even if this happens, especially if you are running an online store front or have a contact form installed.</p>
+
+
+
+<h2 class="wp-block-heading">The tools at hand</h2>
+
+
+
+<div class="wp-block-group is-layout-constrained wp-block-group-is-layout-constrained">
+<h3 class="wp-block-heading">WP-CLI</h3>
+
+
+
+<p>This is the most important one. <a rel="noreferrer noopener" href="https://wp-cli.org/" data-type="URL" data-id="https://wp-cli.org/" target="_blank">WP-CLI</a> is a powerful set of command lines tools that expose and extend WordPress&rsquo; core functionality such as updates, plugin management, user management and even the editorial process itself.</p>
+
+
+
+<p>In our case, we can manipulate the WordPress installation without loading the themes and plugins by using the <code>--skip-plugins</code> and <code>--skip-themes</code> flags, making it more likely for things to work.</p>
+
+
+
+<p>WordPress plugins can even hook into WP-CLI to offer their own command line interfaces.</p>
+
+
+
+<p>The part I use the most for security audits is integrity checking for the WordPress Core and plugins from the wordpress.org repository. This compares file signatures and sees if there are any missing or stray files dotted around your WordPress installation.</p>
+
+
+
+<p>Furthermore, make sure not to run WP-CLI as an administrative user (<code>root</code>) when recovering breached sites.</p>
+</div>
+
+
+
+<div class="wp-block-group is-layout-constrained wp-block-group-is-layout-constrained">
+<h3 class="wp-block-heading">Standard Unix/Linux tools</h3>
+
+
+
+<p>Obviously, being able to look at and change files from the command line is useful for this sort of work.</p>
+
+
+
+<p>Using standard tools like <code>cat</code>, <code>less</code> and <code>grep</code> and an editor like <code>vim</code> or <code>nano</code> to glimpse at files in the terminal is how I do things, but if you have a file manager included in your hosting package, then you can use it too for the same purpose.</p>
+</div>
+
+
+
+<div class="wp-block-group is-layout-constrained wp-block-group-is-layout-constrained">
+<h3 class="wp-block-heading">PHP Malware Scanner</h3>
+
+
+
+<p>Regardless of being convoluted, this is a really important tool to use. You can install <a href="https://github.com/scr34m/php-malware-scanner" data-type="URL" data-id="https://github.com/scr34m/php-malware-scanner" target="_blank" rel="noreferrer noopener">PHP Malware Scanner</a> with PHP Composer or simply clone the code repository from Github and run it like that.</p>
+
+
+
+<p>PHP Malware Scanner covers the ground that WP-CLI can&rsquo;t; such as themes, plugins from outside wordpress.org and the uploads directory, where malicious code can be kept and run from elsewhere. (even if you can&rsquo;t run a .php file using a web request to your site at <code>/wp-content/uploads/</code>, other less suspicious looking files can still run them internally).</p>
+
+
+
+<p>The downside here is that a lot of the malware patterns that PHP Malware Scanner looks for are standard practice in WordPress development (such as encoding icons with PHP&rsquo;s <code><a rel="noreferrer noopener" href="https://www.php.net/manual/en/function.base64-encode.php" data-type="URL" data-id="https://www.php.net/manual/en/function.base64-encode.php" target="_blank">base64_encode</a></code> function, which is also used for obscuring malicious code) and simply put, it can spit out loads of false alarms, resulting in manual checking, which only gets more efficient with practice.</p>
+</div>
+
+
+
+<div class="wp-block-group is-layout-constrained wp-block-group-is-layout-constrained">
+<div class="wp-block-group is-layout-constrained wp-block-group-is-layout-constrained">
+<h3 class="wp-block-heading">WordPress specific vulnerability databases</h3>
+
+
+
+<ul class="wp-block-list">
+<li><strong><a href="https://patchstack.com/" data-type="URL" data-id="https://patchstack.com/" target="_blank" rel="noreferrer noopener">Patchstack</a>:</strong> This is my preferred tool, as it goes as aggressive as ethically possible on zero-day attack vectors that have not been announced publicly but may be in active use. The web interface is great, even for non-registered users.</li>
+
+
+
+<li><strong><a href="https://wpscan.com/" data-type="URL" data-id="https://wpscan.com/" target="_blank" rel="noreferrer noopener">WPScan/wpvulndb</a>:</strong> One of Automattic&rsquo;s acquisitions, this is the most commonly used WordPress specific vulnerability database out there. They offer a simple web interface and a paid subscription for their JSON API, but as with Patchstack, I currently stick with using the web interface.</li>
+</ul>
+</div>
+</div>
+
+
+
+<div class="wp-block-group is-layout-constrained wp-block-group-is-layout-constrained">
+<h2 class="wp-block-heading">The methodology</h2>
+
+
+
+<p>This describes the method that I generally use for sites that are still salvageable. This can also be done with an older backup of the WordPress installation, but I prefer to start with the site in an as-is state and go from there.</p>
+</div>
+
+
+
+<div class="wp-block-group is-layout-constrained wp-block-group-is-layout-constrained">
+<h3 class="wp-block-heading">Close the shop</h3>
+
+
+
+<p>Check with your hosting provider if it possible to display an &ldquo;under maintenance&rdquo; page instead of the WordPress site while you work on it. Sometimes, it is sufficient to direct request for the site to a different web root on the same server, with a single <code>index.html</code> file in there.</p>
+
+
+
+<p>This makes sure that nobody else accesses the site while it is being recovered. You also don&rsquo;t want to play whack-a-mole with the malicious actors that took your site down while you&rsquo;re trying to fix it.</p>
+
+
+
+<p>Once you&rsquo;re done, you can reopen the site.</p>
+</div>
+
+
+
+<div class="wp-block-group is-layout-constrained wp-block-group-is-layout-constrained">
+<h3 class="wp-block-heading">Backups</h3>
+
+
+
+<p>You may be able to ask your hosting provider to restore a backup of your WordPress installation from before your site broke down. Sometimes this needs to be requested via email, while larger hosting providers offer self-service tools for that.</p>
+
+
+
+<p>Don&rsquo;t use it to overwrite your current WordPress installation right now, but having it within reach can be useful as a last resort and do keep it in mind that this older version of the site still has the vulnerability that let the malicious actor in to begin with.</p>
+
+
+
+<p>Also, do make sure to download a copy of your site in its current state as well as the database. You may be able to use your hosting provider&rsquo;s web interface for this, but the best tools are something like an SFTP or Git.</p>
+</div>
+
+
+
+<div class="wp-block-group is-layout-constrained wp-block-group-is-layout-constrained">
+<div class="wp-block-group is-layout-constrained wp-block-group-is-layout-constrained">
+<h3 class="wp-block-heading">Preparation</h3>
+
+
+
+<p>After manually backing up your site, start by observing the root directory of your WordPress installation. This is where your <code>index.php</code> and <code>wp-config.php</code> files are located.</p>
+
+
+
+<p>Are there any files in there that do not belong there or have weird or nonsensical names?</p>
+
+
+
+<p>Is there a subdirectory (hidden or visible) that does not belong there either, that may also have strange files in it, even if they don&rsquo;t have a name that ends with .php?</p>
+
+
+
+<p>Now check if <code>wp-config.php</code> and <code>wp-settings.php</code> have any suspicious code in them. Anything unusual in those files may prevent tools like WP-CLI from working properly as they depend on those files and <code>wp-config.php</code> is expected to be edited, so it is generally not checked by automated tools even if it can contain code that should not be there.</p>
+
+
+
+<p>You may use your hosting provider&rsquo;s file manager feature for this, but I prefer to use the command line interface with commands like <code>ls -al</code>, <code>cat</code> and <code>less</code> making things quick and easy.</p>
+
+
+
+<p>If you have any doubts about which files and directories should be in there or what their contents should be, <a rel="noreferrer noopener" href="https://core.trac.wordpress.org/browser/trunk/src" data-type="URL" data-id="https://core.trac.wordpress.org/browser/trunk/src" target="_blank">check the original WordPress source code</a> and do a quick comparison if you need to.</p>
+
+
+
+<p>A good rule of thumb here is that if anything looks like scrambled text, it shouldn&rsquo;t be there.</p>
+
+
+
+<h3 class="wp-block-heading">Scanning and repairing the WordPress core and plugins with WP-CLI</h3>
+
+
+
+<p>This is where we start scanning your WordPress core and its integrity, and you need command line access (sometimes called <em>Shell</em>, <em>Terminal </em>or <em>SSH</em>) in order to do that.</p>
+
+
+
+<p>This command checks all the files that came with the WordPress core and sees if there are any stray files that should not be there:</p>
+
+
+
+<pre class="wp-block-code"><code class="">$ wp core verify-checksums --include-root --skip-plugins --skip-themes</code></pre>
+</div>
+
+
+
+<p>In case of you getting a list of files that are labelled as not verified against a checksum, it means that they have potentially been injected with malicious code.</p>
+
+
+
+<p>In that case, your output may look like this:</p>
+
+
+
+<pre class="wp-block-code"><code class="">Warning: File doesn't verify against checksum: wp-includes/version.php
+Warning: File should not exist: wp-includes/images/totally-legit-file.ico
+Error: WordPress installation doesn't verify against checksums.</code></pre>
+
+
+
+<p>Here we see that <code>wp-includes/version.php</code> has been modified, potentially with malicious code. There is also a file here in the <code>wp-includes/images/</code> directory that looks very suspicious. In fact, a lot of the malicous code thatt ends</p>
+
+
+
+<p>In that case, or if the above command fails, you may want to re-download WordPress, you can run the following command:</p>
+
+
+
+<pre class="wp-block-code"><code class="">$ wp core download --force --skip-plugins --skip-themes</code></pre>
+
+
+
+<p>Run the <code>core verify-checksums</code> command from above again and simply delete the files it does not recognise. This should leave the WordPress core itself in a usable state, but we are only getting started as the plugins are next.</p>
+</div>
+
+
+
+<div class="wp-block-group is-layout-constrained wp-block-group-is-layout-constrained">
+<h3 class="wp-block-heading">Scanning and repairing plugins from WordPress.org</h3>
+
+
+
+<pre class="wp-block-code"><code class="">$ wp plugin verify-checksums --all --strict --skip-plugins --skip-themes</code></pre>
+
+
+
+<p>This works in a similar way as the <code>wp core</code> commands from above. It iterates through the plugins installed on your site and checks the integrity of its files. The <code>--strict</code> option enables checks for minor changes as well, including new files and such.</p>
+
+
+
+<p>The results may look like this:</p>
+
+
+
+<pre class="wp-block-code"><code class="">+---------------------+-------------------------+-------------------------+
+| plugin_name         | file                    | message                 |
++---------------------+-------------------------+-------------------------+
+| plausible-analytics | plausible-analytics.php | Checksum does not match |
+| plausible-analytics | ev0lh4x.php             | File was added          |
++---------------------+-------------------------+-------------------------+
+Error: No plugins verified (1 failed).</code></pre>
+
+
+
+<p>Now, here we have a plugin that fails its test because <code>plausible-analytics.php</code> has been modified and the file <code>ev0lh4x.php</code> has been added.</p>
+
+
+
+<p>Do note that WP-CLI will not be happy about plugins that did not come from the wordpress.org plugins repository but I will discuss them in the next section, <em>scanning and repairing anything else</em>, but please make sure to note them down.</p>
+
+
+
+<p>For the next step, have a look at the following:</p>
+
+
+
+<pre class="wp-block-code"><code class="">$ INSTALLED_PLUGINS=$(wp plugin list --field=name --skip-plugins --skip-themes)
+$ wp plugin install $INSTALLED_PLUGINS --force --skip-plugins --skip-themes</code></pre>
+
+
+
+<p>Those two scary looking commands list the currently installed plugins and then reinstall the plugins from that list. As with the integrity check, it does not reinstall plugins that did not come from wordpress.org.</p>
+
+
+
+<p>After reinstalling the plugins, run the <code>plugin verify-checksums</code> command again to see if the free plugins have any added or modified files this time &ndash; and as with the WordPress core, make sure to delete the stray files that shouldn&rsquo;t be there.</p>
+
+
+
+<h3 class="wp-block-heading">Deleting unused plugins  and themes</h3>
+
+
+
+<p>A lot of breaches happen due to plugins and themes that have been disabled but not uninstalled completely. List out the currently installed plugins and themes and evaluate what should and should not be there:</p>
+
+
+
+<pre class="wp-block-code"><code class="">$ wp plugin list --skip-plugins --skip-themes</code></pre>
+</div>
+
+
+
+<pre class="wp-block-code"><code class="">$ wp theme list --skip-plugins --skip-themes</code></pre>
+
+
+
+<p>It is up to you to remove the unused plugins and themes from the filesystem or if you want to use WP-CLI for it.</p>
+
+
+
+<div class="wp-block-group is-layout-constrained wp-block-group-is-layout-constrained">
+<h3 class="wp-block-heading">Scanning and repairing anything else</h3>
+
+
+
+<p>Depending on the amount of paid plugins and themes, or ones that simply did not originate from wordpress.org, you are going to need to decide which ones to get rid of and which ones to salvage.</p>
+
+
+
+<p>Themes can also not be checked for integrity in the same way as plugins, so it is best to get rid of the ones you are not currently using.</p>
+
+
+
+<p>There are also directories in your WordPress installation outside the core, plugins and themes that need to be checked and deleted. Malicious files are very very often included from your uploads directory even if they can&rsquo;t be run from there, often disguised as image files.</p>
+
+
+
+<p>Start by installing PHP Malware Scanner, which you should be able to do as long as you have shell access.</p>
+
+
+
+<p>You can for example download the codebase from Github and run it from your home directory, if you can&rsquo;t do that, you can install it to your local machine and run it from here instead after downloading your WordPress installation via SFTP or your hosting provider&rsquo;s file manager.</p>
+
+
+
+<p>In case the path to your WordPress installation is <code>~/public_html/</code>, you can scan your themes like this:</p>
+
+
+
+<pre class="wp-block-code"><code class="">$ ~/php-malware-scanner/scan -L -p -k -x -b -E -d ~/public_html/wp-content/themes</code></pre>
+
+
+
+<p>This command looks for suspicious patterns in the themes that you still have as a pat of your WordPress installation. Observe each file listed with a text editor to ensure that noting malicious is in there.</p>
+
+
+
+<p>This is where you need to judge if the file itself should or shouldn&rsquo;t be there at all or if some of the fractions are injected code, if at all.</p>
+
+
+
+<p>The more often you end up doing this you start knowing how to spot the malicious code patterns that are usually wrapped in base64 encoded text or use other form of obfuscation, that look nothing like WordPress or anything related to it.</p>
+
+
+
+<p>I also recommend doing this scan anywhere else you can think of within the site, including the <code>wp-content/uploads</code> directory to make sure that nothing is hidden in there.</p>
+</div>
+
+
+
+<div class="wp-block-group is-layout-constrained wp-block-group-is-layout-constrained">
+<h3 class="wp-block-heading">Checking and renewing licences for paid plugins and themes</h3>
+
+
+
+<p>Here is the boring part: Are your paid themes and plugins being updated and are you able to re-install them?</p>
+
+
+
+<p>In many of the cases that end up on my desk, the web design and development agencies that worked on the sites only paid for a one-year licence for the theme and paid plug-ins that they installed. By that time, those licences have expired. </p>
+
+
+
+<p>This means that you will have to find where it was from, pay for it again and re-install it if you want them to stay secure and freshly updated.</p>
+</div>
+
+
+
+<div class="wp-block-group is-layout-constrained wp-block-group-is-layout-constrained">
+<h3 class="wp-block-heading">Audit users</h3>
+
+
+
+<p>An important step is to make sure that there are no malicious or unnecessary users with administative or editorial access to the site.</p>
+
+
+
+<p>The following WP-CLI command list all users on the site:</p>
+
+
+
+<pre class="wp-block-code"><code class="">$ wp user list</code></pre>
+
+
+
+<p>If you get a lot of users that are subscribers or WooCommerce customers, you can use the <code>--role=administrator</code> parameter to filter users who have admin rights for instance.</p>
+
+
+
+<p>Are there any users that have admin privileges but don&rsquo;t need them? You can either delete them using them <code>$ wp user delete $user</code> command or demote them to a subscriber using <code>$ wp user set-role $user subscriber</code>.</p>
+</div>
+
+
+
+<div class="wp-block-group is-layout-constrained wp-block-group-is-layout-constrained">
+<h3 class="wp-block-heading">Reset all passwords and sessions</h3>
+
+
+
+<p>This destroys every user session, effectively logging everyone out.</p>
+
+
+
+<pre class="wp-block-code"><code class="">$ wp user session destroy --all --skip-plugins --skip-themes</code></pre>
+
+
+
+<p>Then, you can reset everyone&rsquo;s password. If email facilities are configured for the site, the users will get an email about the reset with a link for them to take care of it themselves.</p>
+
+
+
+<pre class="wp-block-code"><code class="">$ WP_USERS=$(wp user list --field=id --skip-plugins --skip-themes)
+$ wp user reset-password $WP_USERS</code></pre>
+</div>
+
+
+
+<div class="wp-block-group is-layout-constrained wp-block-group-is-layout-constrained">
+<h3 class="wp-block-heading">Closing the file and looking up possible causes</h3>
+
+
+
+<p>You probably want to write a report about the breach and what may have possibly caused it. You can look the originally installed version of the WordPress Core in addition to the plugins and themes that were there in the beginning in one of the vulnerability databases.</p>
+
+
+
+<p>Remember that in some cases, the plugin or theme in question does not need to be active in order for a vulnerability to take its toll.</p>
+</div>
+
+
+
+<h2 class="wp-block-heading">The aftermath</h2>
+
+
+
+<p>Getting breached is humiliating in more ways than one and the effects of that can range from loss of customer trust or a drop in SEO to or your site being listed as malicious long term by search engines, advertising platforms and browser vendors.</p>
+
+
+
+<p>And that is awful, especially for those who&rsquo;s main source of income is their web presence.</p>
+
+
+
+<h3 class="wp-block-heading">Legal obligations</h3>
+
+
+
+<p>In case your site was breached using code injection or stolen login credentials or any other way; even if the website itself kept running, you may have certain legal obligations towards your users and customers.</p>
+
+
+
+<p>If you have been collecting personally identifiable information in any way; including registered users, contact forms and WooCommerce orders, you will need to contact your data protection authority (i.e. the relevant government authorities) or a lawyer including the next steps in order to assess the situation and for advice on the next steps.</p>
+
+
+
+<p>Some of the things you may need to do is to announce the breach to those individuals who&rsquo;s information may have been accessed by a 3rd party.</p>
+
+
+
+<h3 class="wp-block-heading">Learning from it all</h3>
+
+
+
+<p>After recovery (or during the intensive care phase), there are usually questions that can be asked and best practices that can be implemented, including the following:</p>
+
+
+
+<ul class="wp-block-list">
+<li>Do I need to have all those plugins installed?</li>
+
+
+
+<li>Does every user on the site need administrative powers?</li>
+
+
+
+<li>Were there registered users that should not be there?</li>
+
+
+
+<li>Are my own login credentials safe?</li>
+
+
+
+<li>Should I implement and mandate multi-factor authentication for logging in to my site?</li>
+
+
+
+<li>Is the site in its current form causing me liability that I could be without?</li>
+
+
+
+<li>Was our choice of hosting provider a negative or positive factor?</li>
+
+
+
+<li>Is WordPress right for me and my business?</li>
+
+
+
+<li>Did we choose a competent agency to work on the site?</li>
+
+
+
+<li>Did we as a business conduct sufficient due diligence when having the site developed?</li>
+
+
+
+<li>Did the agency that worked on the site support us or accept responsibility?</li>
+
+
+
+<li>Did the agency have any form of responsibility here at all?</li>
+
+
+
+<li>Should we have had a support contract for the site from the web development agency?</li>
+</ul>
+
+
+
+<p>None of those questions are the wrong question to ask and for anyone conducting the recovery effort, those questions should be the basis of a final report. Security necessitates turning as many stones as possible and admittance and acceptance of facts are key to that.</p>
+
+
+
+<p>Keep it in mind that the work may not even be over and that one needs to keep an eye on things for at least a week or two to make sure that things don&rsquo;t happen again. Examine the site logs and use some form of application monitoring if possible.</p>
+
+
+
+<p>There are no magic solutions or silver bullets here. The methods I describe here do not apply everywhere and in all cases but this should at least demonstrate what goes into attempting to recover a WordPress site after it has been breached and injected with malicious code.</p>
+
+
+
+<p></p>
+</div>
+    </article>
+
+
+
+    <aside class="wp-block-group author-info is-layout-flow wp-block-group-is-layout-flow">
+    <div class="wp-block-post-author has-medium-font-size"><div class="wp-block-post-author__avatar"><img alt="" src="https://secure.gravatar.com/avatar/4ccdaeb5f30a50947d0a51a9d347be281d1885d1cdd10e8180640b7dff557749?s=192&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/4ccdaeb5f30a50947d0a51a9d347be281d1885d1cdd10e8180640b7dff557749?s=384&amp;d=mm&amp;r=g 2x" class="avatar avatar-192 photo" height="192" width="192" decoding="async"></div><div class="wp-block-post-author__content"><p class="wp-block-post-author__name">Alda Vigd&iacute;s Skarph&eacute;&eth;insd&oacute;ttir</p><p class="wp-block-post-author__bio">Having made things for the web since the 90&rsquo;s, Alda has found herself in the position of being a jack of all trades when it comes to full stack web development and system operations. She&rsquo;s currently consulting in the hosting sector and open to new opportunities.</p></div></div>
+    </aside>
+
+
+<div class="site-footer wp-block-template-part">
+    <footer class="wp-block-group has-s-font-size is-layout-constrained wp-block-group-is-layout-constrained">
+    <p class="has-s-font-size">
+        This is a project by
+        <a href="https://aldavigdis.is/" target="_blank">Alda Vigd&iacute;s</a>.
+    </p>
+    
+    </footer>
+
+</div>
+</div>
+<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"\/*"},{"not":{"href_matches":["\/wp-*.php","\/wp-admin\/*","\/wp-content\/uploads\/*","\/wp-content\/*","\/wp-content\/plugins\/*","\/wp-content\/themes\/aldatheme\/*","\/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+<script id="wp-block-template-skip-link-js-after">
+	( function() {
+		var skipLinkTarget = document.querySelector( 'main' ),
+			sibling,
+			skipLinkTargetID,
+			skipLink;
+
+		// Early exit if a skip-link target can't be located.
+		if ( ! skipLinkTarget ) {
+			return;
+		}
+
+		/*
+		 * Get the site wrapper.
+		 * The skip-link will be injected in the beginning of it.
+		 */
+		sibling = document.querySelector( '.wp-site-blocks' );
+
+		// Early exit if the root element was not found.
+		if ( ! sibling ) {
+			return;
+		}
+
+		// Get the skip-link target's ID, and generate one if it doesn't exist.
+		skipLinkTargetID = skipLinkTarget.id;
+		if ( ! skipLinkTargetID ) {
+			skipLinkTargetID = 'wp--skip-link--target';
+			skipLinkTarget.id = skipLinkTargetID;
+		}
+
+		// Create the skip link.
+		skipLink = document.createElement( 'a' );
+		skipLink.classList.add( 'skip-link', 'screen-reader-text' );
+		skipLink.id = 'wp-skip-link';
+		skipLink.href = '#' + skipLinkTargetID;
+		skipLink.innerText = 'Skip to content';
+
+		// Inject the skip link.
+		sibling.parentElement.insertBefore( skipLink, sibling );
+	}() );
+	
+</script>
+<script id="mkaz-code-syntax-prism-js-js-extra">
+var prism_settings = {"pluginUrl":"\/wp-content\/plugins\/code-syntax-block\/"};
+</script>
+<script src="/wp-content/plugins/code-syntax-block/assets/prism/prism.js?ver=1727704537" id="mkaz-code-syntax-prism-js-js"></script>
+</body>
+</html>

@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="max-image-preview:large">
+	<style>img:is([sizes="auto" i], [sizes^="auto," i]) { contain-intrinsic-size: 3000px 1500px }</style>
+	<title>My strange experiences with Automattic: Part 3 &ndash; aldavigdis.dev</title>
+<link rel="alternate" type="application/rss+xml" title="aldavigdis.dev &raquo; Feed" href="/feed/">
+<link rel="alternate" type="application/rss+xml" title="aldavigdis.dev &raquo; Comments Feed" href="/comments/feed/">
+<script>
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16.0.1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16.0.1\/svg\/","svgExt":".svg","source":{"concatemoji":"\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.8.3"}};
+/*! This file is auto-generated */
+!function(s,n){var o,i,e;function c(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function p(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data),a=(e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0),new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data));return t.every(function(e,t){return e===a[t]})}function u(e,t){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);for(var n=e.getImageData(16,16,1,1),a=0;a<n.data.length;a++)if(0!==n.data[a])return!1;return!0}function f(e,t,n,a){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\udde8\ud83c\uddf6","\ud83c\udde8\u200b\ud83c\uddf6")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!a(e,"\ud83e\udedf")}return!1}function g(e,t,n,a){var r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):s.createElement("canvas"),o=r.getContext("2d",{willReadFrequently:!0}),i=(o.textBaseline="top",o.font="600 32px Arial",{});return e.forEach(function(e){i[e]=t(o,e,n,a)}),i}function t(e){var t=s.createElement("script");t.src=e,t.defer=!0,s.head.appendChild(t)}"undefined"!=typeof Promise&&(o="wpEmojiSettingsSupports",i=["flag","emoji"],n.supports={everything:!0,everythingExceptFlag:!0},e=new Promise(function(e){s.addEventListener("DOMContentLoaded",e,{once:!0})}),new Promise(function(t){var n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+g.toString()+"("+[JSON.stringify(i),f.toString(),p.toString(),u.toString()].join(",")+"));",a=new Blob([e],{type:"text/javascript"}),r=new Worker(URL.createObjectURL(a),{name:"wpTestEmojiSupports"});return void(r.onmessage=function(e){c(n=e.data),r.terminate(),t(n)})}catch(e){}c(n=g(i,f,p,u))}t(n)}).then(function(e){for(var t in e)n.supports[t]=e[t],n.supports.everything=n.supports.everything&&n.supports[t],"flag"!==t&&(n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&n.supports[t]);n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&!n.supports.flag,n.DOMReady=!1,n.readyCallback=function(){n.DOMReady=!0}}).then(function(){return e}).then(function(){var e;n.supports.everything||(n.readyCallback(),(e=n.source||{}).concatemoji?t(e.concatemoji):e.wpemoji&&e.twemoji&&(t(e.twemoji),t(e.wpemoji)))}))}((window,document),window._wpemojiSettings);
+</script>
+<style id="wp-block-site-title-inline-css">
+.wp-block-site-title{box-sizing:border-box}.wp-block-site-title :where(a){color:inherit;font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;letter-spacing:inherit;line-height:inherit;text-decoration:inherit}
+</style>
+<style id="wp-block-template-part-theme-inline-css">
+:root :where(.wp-block-template-part.has-background){margin-bottom:0;margin-top:0;padding:1.25em 2.375em}
+</style>
+<style id="wp-block-post-title-inline-css">
+.wp-block-post-title{box-sizing:border-box;word-break:break-word}.wp-block-post-title :where(a){display:inline-block;font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;letter-spacing:inherit;line-height:inherit;text-decoration:inherit}
+</style>
+<style id="wp-block-post-date-inline-css">
+.wp-block-post-date{box-sizing:border-box}
+</style>
+<style id="wp-block-post-featured-image-inline-css">
+.wp-block-post-featured-image{margin-left:0;margin-right:0}.wp-block-post-featured-image a{display:block;height:100%}.wp-block-post-featured-image :where(img){box-sizing:border-box;height:auto;max-width:100%;vertical-align:bottom;width:100%}.wp-block-post-featured-image.alignfull img,.wp-block-post-featured-image.alignwide img{width:100%}.wp-block-post-featured-image .wp-block-post-featured-image__overlay.has-background-dim{background-color:#000;inset:0;position:absolute}.wp-block-post-featured-image{position:relative}.wp-block-post-featured-image .wp-block-post-featured-image__overlay.has-background-gradient{background-color:initial}.wp-block-post-featured-image .wp-block-post-featured-image__overlay.has-background-dim-0{opacity:0}.wp-block-post-featured-image .wp-block-post-featured-image__overlay.has-background-dim-10{opacity:.1}.wp-block-post-featured-image .wp-block-post-featured-image__overlay.has-background-dim-20{opacity:.2}.wp-block-post-featured-image .wp-block-post-featured-image__overlay.has-background-dim-30{opacity:.3}.wp-block-post-featured-image .wp-block-post-featured-image__overlay.has-background-dim-40{opacity:.4}.wp-block-post-featured-image .wp-block-post-featured-image__overlay.has-background-dim-50{opacity:.5}.wp-block-post-featured-image .wp-block-post-featured-image__overlay.has-background-dim-60{opacity:.6}.wp-block-post-featured-image .wp-block-post-featured-image__overlay.has-background-dim-70{opacity:.7}.wp-block-post-featured-image .wp-block-post-featured-image__overlay.has-background-dim-80{opacity:.8}.wp-block-post-featured-image .wp-block-post-featured-image__overlay.has-background-dim-90{opacity:.9}.wp-block-post-featured-image .wp-block-post-featured-image__overlay.has-background-dim-100{opacity:1}.wp-block-post-featured-image:where(.alignleft,.alignright){width:100%}
+</style>
+<style id="wp-block-paragraph-inline-css">
+.is-small-text{font-size:.875em}.is-regular-text{font-size:1em}.is-large-text{font-size:2.25em}.is-larger-text{font-size:3em}.has-drop-cap:not(:focus):first-letter{float:left;font-size:8.4em;font-style:normal;font-weight:100;line-height:.68;margin:.05em .1em 0 0;text-transform:uppercase}body.rtl .has-drop-cap:not(:focus):first-letter{float:none;margin-left:.1em}p.has-drop-cap.has-background{overflow:hidden}:root :where(p.has-background){padding:1.25em 2.375em}:where(p.has-text-color:not(.has-link-color)) a{color:inherit}p.has-text-align-left[style*="writing-mode:vertical-lr"],p.has-text-align-right[style*="writing-mode:vertical-rl"]{rotate:180deg}
+</style>
+<style id="wp-block-list-inline-css">
+ol,ul{box-sizing:border-box}:root :where(.wp-block-list.has-background){padding:1.25em 2.375em}
+</style>
+<style id="wp-block-heading-inline-css">
+h1.has-background,h2.has-background,h3.has-background,h4.has-background,h5.has-background,h6.has-background{padding:1.25em 2.375em}h1.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h1.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h2.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h2.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h3.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h3.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h4.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h4.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h5.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h5.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h6.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h6.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]){rotate:180deg}
+</style>
+<style id="wp-block-image-inline-css">
+.wp-block-image>a,.wp-block-image>figure>a{display:inline-block}.wp-block-image img{box-sizing:border-box;height:auto;max-width:100%;vertical-align:bottom}@media not (prefers-reduced-motion){.wp-block-image img.hide{visibility:hidden}.wp-block-image img.show{animation:show-content-image .4s}}.wp-block-image[style*=border-radius] img,.wp-block-image[style*=border-radius]>a{border-radius:inherit}.wp-block-image.has-custom-border img{box-sizing:border-box}.wp-block-image.aligncenter{text-align:center}.wp-block-image.alignfull>a,.wp-block-image.alignwide>a{width:100%}.wp-block-image.alignfull img,.wp-block-image.alignwide img{height:auto;width:100%}.wp-block-image .aligncenter,.wp-block-image .alignleft,.wp-block-image .alignright,.wp-block-image.aligncenter,.wp-block-image.alignleft,.wp-block-image.alignright{display:table}.wp-block-image .aligncenter>figcaption,.wp-block-image .alignleft>figcaption,.wp-block-image .alignright>figcaption,.wp-block-image.aligncenter>figcaption,.wp-block-image.alignleft>figcaption,.wp-block-image.alignright>figcaption{caption-side:bottom;display:table-caption}.wp-block-image .alignleft{float:left;margin:.5em 1em .5em 0}.wp-block-image .alignright{float:right;margin:.5em 0 .5em 1em}.wp-block-image .aligncenter{margin-left:auto;margin-right:auto}.wp-block-image :where(figcaption){margin-bottom:1em;margin-top:.5em}.wp-block-image.is-style-circle-mask img{border-radius:9999px}@supports ((-webkit-mask-image:none) or (mask-image:none)) or (-webkit-mask-image:none){.wp-block-image.is-style-circle-mask img{border-radius:0;-webkit-mask-image:url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="50"/>');mask-image:url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="50"/>');mask-mode:alpha;-webkit-mask-position:center;mask-position:center;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-size:contain;mask-size:contain}}:root :where(.wp-block-image.is-style-rounded img,.wp-block-image .is-style-rounded img){border-radius:9999px}.wp-block-image figure{margin:0}.wp-lightbox-container{display:flex;flex-direction:column;position:relative}.wp-lightbox-container img{cursor:zoom-in}.wp-lightbox-container img:hover+button{opacity:1}.wp-lightbox-container button{align-items:center;-webkit-backdrop-filter:blur(16px) saturate(180%);backdrop-filter:blur(16px) saturate(180%);background-color:#5a5a5a40;border:none;border-radius:4px;cursor:zoom-in;display:flex;height:20px;justify-content:center;opacity:0;padding:0;position:absolute;right:16px;text-align:center;top:16px;width:20px;z-index:100}@media not (prefers-reduced-motion){.wp-lightbox-container button{transition:opacity .2s ease}}.wp-lightbox-container button:focus-visible{outline:3px auto #5a5a5a40;outline:3px auto -webkit-focus-ring-color;outline-offset:3px}.wp-lightbox-container button:hover{cursor:pointer;opacity:1}.wp-lightbox-container button:focus{opacity:1}.wp-lightbox-container button:focus,.wp-lightbox-container button:hover,.wp-lightbox-container button:not(:hover):not(:active):not(.has-background){background-color:#5a5a5a40;border:none}.wp-lightbox-overlay{box-sizing:border-box;cursor:zoom-out;height:100vh;left:0;overflow:hidden;position:fixed;top:0;visibility:hidden;width:100%;z-index:100000}.wp-lightbox-overlay .close-button{align-items:center;cursor:pointer;display:flex;justify-content:center;min-height:40px;min-width:40px;padding:0;position:absolute;right:calc(env(safe-area-inset-right) + 16px);top:calc(env(safe-area-inset-top) + 16px);z-index:5000000}.wp-lightbox-overlay .close-button:focus,.wp-lightbox-overlay .close-button:hover,.wp-lightbox-overlay .close-button:not(:hover):not(:active):not(.has-background){background:none;border:none}.wp-lightbox-overlay .lightbox-image-container{height:var(--wp--lightbox-container-height);left:50%;overflow:hidden;position:absolute;top:50%;transform:translate(-50%,-50%);transform-origin:top left;width:var(--wp--lightbox-container-width);z-index:9999999999}.wp-lightbox-overlay .wp-block-image{align-items:center;box-sizing:border-box;display:flex;height:100%;justify-content:center;margin:0;position:relative;transform-origin:0 0;width:100%;z-index:3000000}.wp-lightbox-overlay .wp-block-image img{height:var(--wp--lightbox-image-height);min-height:var(--wp--lightbox-image-height);min-width:var(--wp--lightbox-image-width);width:var(--wp--lightbox-image-width)}.wp-lightbox-overlay .wp-block-image figcaption{display:none}.wp-lightbox-overlay button{background:none;border:none}.wp-lightbox-overlay .scrim{background-color:#fff;height:100%;opacity:.9;position:absolute;width:100%;z-index:2000000}.wp-lightbox-overlay.active{visibility:visible}@media not (prefers-reduced-motion){.wp-lightbox-overlay.active{animation:turn-on-visibility .25s both}.wp-lightbox-overlay.active img{animation:turn-on-visibility .35s both}.wp-lightbox-overlay.show-closing-animation:not(.active){animation:turn-off-visibility .35s both}.wp-lightbox-overlay.show-closing-animation:not(.active) img{animation:turn-off-visibility .25s both}.wp-lightbox-overlay.zoom.active{animation:none;opacity:1;visibility:visible}.wp-lightbox-overlay.zoom.active .lightbox-image-container{animation:lightbox-zoom-in .4s}.wp-lightbox-overlay.zoom.active .lightbox-image-container img{animation:none}.wp-lightbox-overlay.zoom.active .scrim{animation:turn-on-visibility .4s forwards}.wp-lightbox-overlay.zoom.show-closing-animation:not(.active){animation:none}.wp-lightbox-overlay.zoom.show-closing-animation:not(.active) .lightbox-image-container{animation:lightbox-zoom-out .4s}.wp-lightbox-overlay.zoom.show-closing-animation:not(.active) .lightbox-image-container img{animation:none}.wp-lightbox-overlay.zoom.show-closing-animation:not(.active) .scrim{animation:turn-off-visibility .4s forwards}}@keyframes show-content-image{0%{visibility:hidden}99%{visibility:hidden}to{visibility:visible}}@keyframes turn-on-visibility{0%{opacity:0}to{opacity:1}}@keyframes turn-off-visibility{0%{opacity:1;visibility:visible}99%{opacity:0;visibility:visible}to{opacity:0;visibility:hidden}}@keyframes lightbox-zoom-in{0%{transform:translate(calc((-100vw + var(--wp--lightbox-scrollbar-width))/2 + var(--wp--lightbox-initial-left-position)),calc(-50vh + var(--wp--lightbox-initial-top-position))) scale(var(--wp--lightbox-scale))}to{transform:translate(-50%,-50%) scale(1)}}@keyframes lightbox-zoom-out{0%{transform:translate(-50%,-50%) scale(1);visibility:visible}99%{visibility:visible}to{transform:translate(calc((-100vw + var(--wp--lightbox-scrollbar-width))/2 + var(--wp--lightbox-initial-left-position)),calc(-50vh + var(--wp--lightbox-initial-top-position))) scale(var(--wp--lightbox-scale));visibility:hidden}}
+</style>
+<style id="wp-block-image-theme-inline-css">
+:root :where(.wp-block-image figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme :root :where(.wp-block-image figcaption){color:#ffffffa6}.wp-block-image{margin:0 0 1em}
+</style>
+<style id="wp-block-post-content-inline-css">
+.wp-block-post-content{display:flow-root}
+</style>
+<style id="wp-block-group-inline-css">
+.wp-block-group{box-sizing:border-box}:where(.wp-block-group.wp-block-group-is-layout-constrained){position:relative}
+</style>
+<style id="wp-block-group-theme-inline-css">
+:where(.wp-block-group.has-background){padding:1.25em 2.375em}
+</style>
+<style id="wp-block-post-author-inline-css">
+.wp-block-post-author{box-sizing:border-box;display:flex;flex-wrap:wrap}.wp-block-post-author__byline{font-size:.5em;margin-bottom:0;margin-top:0;width:100%}.wp-block-post-author__avatar{margin-right:1em}.wp-block-post-author__bio{font-size:.7em;margin-bottom:.7em}.wp-block-post-author__content{flex-basis:0;flex-grow:1}.wp-block-post-author__name{margin:0}
+</style>
+<style id="wp-emoji-styles-inline-css">
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+</style>
+<style id="wp-block-library-inline-css">
+:root{--wp-admin-theme-color:#007cba;--wp-admin-theme-color--rgb:0,124,186;--wp-admin-theme-color-darker-10:#006ba1;--wp-admin-theme-color-darker-10--rgb:0,107,161;--wp-admin-theme-color-darker-20:#005a87;--wp-admin-theme-color-darker-20--rgb:0,90,135;--wp-admin-border-width-focus:2px;--wp-block-synced-color:#7a00df;--wp-block-synced-color--rgb:122,0,223;--wp-bound-block-color:var(--wp-block-synced-color)}@media (min-resolution:192dpi){:root{--wp-admin-border-width-focus:1.5px}}.wp-element-button{cursor:pointer}:root{--wp--preset--font-size--normal:16px;--wp--preset--font-size--huge:42px}:root .has-very-light-gray-background-color{background-color:#eee}:root .has-very-dark-gray-background-color{background-color:#313131}:root .has-very-light-gray-color{color:#eee}:root .has-very-dark-gray-color{color:#313131}:root .has-vivid-green-cyan-to-vivid-cyan-blue-gradient-background{background:linear-gradient(135deg,#00d084,#0693e3)}:root .has-purple-crush-gradient-background{background:linear-gradient(135deg,#34e2e4,#4721fb 50%,#ab1dfe)}:root .has-hazy-dawn-gradient-background{background:linear-gradient(135deg,#faaca8,#dad0ec)}:root .has-subdued-olive-gradient-background{background:linear-gradient(135deg,#fafae1,#67a671)}:root .has-atomic-cream-gradient-background{background:linear-gradient(135deg,#fdd79a,#004a59)}:root .has-nightshade-gradient-background{background:linear-gradient(135deg,#330968,#31cdcf)}:root .has-midnight-gradient-background{background:linear-gradient(135deg,#020381,#2874fc)}.has-regular-font-size{font-size:1em}.has-larger-font-size{font-size:2.625em}.has-normal-font-size{font-size:var(--wp--preset--font-size--normal)}.has-huge-font-size{font-size:var(--wp--preset--font-size--huge)}.has-text-align-center{text-align:center}.has-text-align-left{text-align:left}.has-text-align-right{text-align:right}#end-resizable-editor-section{display:none}.aligncenter{clear:both}.items-justified-left{justify-content:flex-start}.items-justified-center{justify-content:center}.items-justified-right{justify-content:flex-end}.items-justified-space-between{justify-content:space-between}.screen-reader-text{border:0;clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;word-wrap:normal!important}.screen-reader-text:focus{background-color:#ddd;clip-path:none;color:#444;display:block;font-size:1em;height:auto;left:5px;line-height:normal;padding:15px 23px 14px;text-decoration:none;top:5px;width:auto;z-index:100000}html :where(.has-border-color){border-style:solid}html :where([style*=border-top-color]){border-top-style:solid}html :where([style*=border-right-color]){border-right-style:solid}html :where([style*=border-bottom-color]){border-bottom-style:solid}html :where([style*=border-left-color]){border-left-style:solid}html :where([style*=border-width]){border-style:solid}html :where([style*=border-top-width]){border-top-style:solid}html :where([style*=border-right-width]){border-right-style:solid}html :where([style*=border-bottom-width]){border-bottom-style:solid}html :where([style*=border-left-width]){border-left-style:solid}html :where(img[class*=wp-image-]){height:auto;max-width:100%}:where(figure){margin:0 0 1em}html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:var(--wp-admin--admin-bar--height,0px)}@media screen and (max-width:600px){html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:0px}}
+</style>
+<link rel="stylesheet" id="aldatheme_style-css" href="/wp-content/themes/aldatheme/style.css?ver=0.1.4-2025-10-06" media="all">
+<style id="global-styles-inline-css">
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--color--almost-black: #333;--wp--preset--color--light-grey: #F0F0F4;--wp--preset--color--grey: #ccc;--wp--preset--color--dark-grey: #555;--wp--preset--color--magenta: #dc68dc;--wp--preset--color--magenta-alt: #dc68a2;--wp--preset--color--orange: #dca268;--wp--preset--color--green: #a2dc68;--wp--preset--color--pastel-magenta: #fff0ff;--wp--preset--color--pastel-magenta-alt: #fff0f8;--wp--preset--color--pastel-orange: #fff8f0;--wp--preset--color--pastel-yellow: #fffff0;--wp--preset--color--pastel-green: #f8fff0;--wp--preset--color--dark-magenta: #6a256a;--wp--preset--color--dark-magenta-alt: #6a2548;--wp--preset--color--dark-orange: #6a4825;--wp--preset--color--dark-yellow: #6a6a25;--wp--preset--color--dark-green: #486a25;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--gradient--tequila-sunrise: linear-gradient(var(--wp--preset--color--magenta-alt) 33%, var(--wp--preset--color--orange) 133% );--wp--preset--gradient--queer-cocktail: linear-gradient(var(--wp--preset--color--magenta-alt) 0%, var(--wp--preset--color--magenta) 100%);--wp--preset--font-size--small: 12px;--wp--preset--font-size--medium: 16px;--wp--preset--font-size--large: 42px;--wp--preset--font-size--x-large: 72px;--wp--preset--font-family--libre-baskerville: Libre Baskerville, serif;--wp--preset--font-family--bitter: Bitter, serif;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:root { --wp--style--global--content-size: 840px;--wp--style--global--wide-size: 1100px; }:where(body) { margin: 0; }.wp-site-blocks > .alignleft { float: left; margin-right: 2em; }.wp-site-blocks > .alignright { float: right; margin-left: 2em; }.wp-site-blocks > .aligncenter { justify-content: center; margin-left: auto; margin-right: auto; }:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}.is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}.is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}.is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}.is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}.is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}body{padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px;}a:where(:not(.wp-element-button)){text-decoration: underline;}:root :where(.wp-element-button, .wp-block-button__link){background-color: #32373c;border-width: 0;color: #fff;font-family: inherit;font-size: inherit;line-height: inherit;padding: calc(0.667em + 2px) calc(1.333em + 2px);text-decoration: none;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-almost-black-color{color: var(--wp--preset--color--almost-black) !important;}.has-light-grey-color{color: var(--wp--preset--color--light-grey) !important;}.has-grey-color{color: var(--wp--preset--color--grey) !important;}.has-dark-grey-color{color: var(--wp--preset--color--dark-grey) !important;}.has-magenta-color{color: var(--wp--preset--color--magenta) !important;}.has-magenta-alt-color{color: var(--wp--preset--color--magenta-alt) !important;}.has-orange-color{color: var(--wp--preset--color--orange) !important;}.has-green-color{color: var(--wp--preset--color--green) !important;}.has-pastel-magenta-color{color: var(--wp--preset--color--pastel-magenta) !important;}.has-pastel-magenta-alt-color{color: var(--wp--preset--color--pastel-magenta-alt) !important;}.has-pastel-orange-color{color: var(--wp--preset--color--pastel-orange) !important;}.has-pastel-yellow-color{color: var(--wp--preset--color--pastel-yellow) !important;}.has-pastel-green-color{color: var(--wp--preset--color--pastel-green) !important;}.has-dark-magenta-color{color: var(--wp--preset--color--dark-magenta) !important;}.has-dark-magenta-alt-color{color: var(--wp--preset--color--dark-magenta-alt) !important;}.has-dark-orange-color{color: var(--wp--preset--color--dark-orange) !important;}.has-dark-yellow-color{color: var(--wp--preset--color--dark-yellow) !important;}.has-dark-green-color{color: var(--wp--preset--color--dark-green) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-almost-black-background-color{background-color: var(--wp--preset--color--almost-black) !important;}.has-light-grey-background-color{background-color: var(--wp--preset--color--light-grey) !important;}.has-grey-background-color{background-color: var(--wp--preset--color--grey) !important;}.has-dark-grey-background-color{background-color: var(--wp--preset--color--dark-grey) !important;}.has-magenta-background-color{background-color: var(--wp--preset--color--magenta) !important;}.has-magenta-alt-background-color{background-color: var(--wp--preset--color--magenta-alt) !important;}.has-orange-background-color{background-color: var(--wp--preset--color--orange) !important;}.has-green-background-color{background-color: var(--wp--preset--color--green) !important;}.has-pastel-magenta-background-color{background-color: var(--wp--preset--color--pastel-magenta) !important;}.has-pastel-magenta-alt-background-color{background-color: var(--wp--preset--color--pastel-magenta-alt) !important;}.has-pastel-orange-background-color{background-color: var(--wp--preset--color--pastel-orange) !important;}.has-pastel-yellow-background-color{background-color: var(--wp--preset--color--pastel-yellow) !important;}.has-pastel-green-background-color{background-color: var(--wp--preset--color--pastel-green) !important;}.has-dark-magenta-background-color{background-color: var(--wp--preset--color--dark-magenta) !important;}.has-dark-magenta-alt-background-color{background-color: var(--wp--preset--color--dark-magenta-alt) !important;}.has-dark-orange-background-color{background-color: var(--wp--preset--color--dark-orange) !important;}.has-dark-yellow-background-color{background-color: var(--wp--preset--color--dark-yellow) !important;}.has-dark-green-background-color{background-color: var(--wp--preset--color--dark-green) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-almost-black-border-color{border-color: var(--wp--preset--color--almost-black) !important;}.has-light-grey-border-color{border-color: var(--wp--preset--color--light-grey) !important;}.has-grey-border-color{border-color: var(--wp--preset--color--grey) !important;}.has-dark-grey-border-color{border-color: var(--wp--preset--color--dark-grey) !important;}.has-magenta-border-color{border-color: var(--wp--preset--color--magenta) !important;}.has-magenta-alt-border-color{border-color: var(--wp--preset--color--magenta-alt) !important;}.has-orange-border-color{border-color: var(--wp--preset--color--orange) !important;}.has-green-border-color{border-color: var(--wp--preset--color--green) !important;}.has-pastel-magenta-border-color{border-color: var(--wp--preset--color--pastel-magenta) !important;}.has-pastel-magenta-alt-border-color{border-color: var(--wp--preset--color--pastel-magenta-alt) !important;}.has-pastel-orange-border-color{border-color: var(--wp--preset--color--pastel-orange) !important;}.has-pastel-yellow-border-color{border-color: var(--wp--preset--color--pastel-yellow) !important;}.has-pastel-green-border-color{border-color: var(--wp--preset--color--pastel-green) !important;}.has-dark-magenta-border-color{border-color: var(--wp--preset--color--dark-magenta) !important;}.has-dark-magenta-alt-border-color{border-color: var(--wp--preset--color--dark-magenta-alt) !important;}.has-dark-orange-border-color{border-color: var(--wp--preset--color--dark-orange) !important;}.has-dark-yellow-border-color{border-color: var(--wp--preset--color--dark-yellow) !important;}.has-dark-green-border-color{border-color: var(--wp--preset--color--dark-green) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-tequila-sunrise-gradient-background{background: var(--wp--preset--gradient--tequila-sunrise) !important;}.has-queer-cocktail-gradient-background{background: var(--wp--preset--gradient--queer-cocktail) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}.has-libre-baskerville-font-family{font-family: var(--wp--preset--font-family--libre-baskerville) !important;}.has-bitter-font-family{font-family: var(--wp--preset--font-family--bitter) !important;}
+</style>
+<style id="wp-block-template-skip-link-inline-css">
+
+		.skip-link.screen-reader-text {
+			border: 0;
+			clip-path: inset(50%);
+			height: 1px;
+			margin: -1px;
+			overflow: hidden;
+			padding: 0;
+			position: absolute !important;
+			width: 1px;
+			word-wrap: normal !important;
+		}
+
+		.skip-link.screen-reader-text:focus {
+			background-color: #eee;
+			clip-path: none;
+			color: #444;
+			display: block;
+			font-size: 1em;
+			height: auto;
+			left: 5px;
+			line-height: normal;
+			padding: 15px 23px 14px;
+			text-decoration: none;
+			top: 5px;
+			width: auto;
+			z-index: 100000;
+		}
+</style>
+<link rel="https://api.w.org/" href="/wp-json/"><link rel="alternate" title="JSON" type="application/json" href="/wp-json/wp/v2/posts/637"><link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd">
+<meta name="generator" content="WordPress 6.8.3">
+<link rel="canonical" href="/2024/09/30/my-strange-experiences-with-automattic-part-3/">
+<link rel="shortlink" href="/?p=637">
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="/wp-json/oembed/1.0/embed?url=https%3A%2F%2F%2F2024%2F09%2F30%2Fmy-strange-experiences-with-automattic-part-3%2F">
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="/wp-json/oembed/1.0/embed?url=https%3A%2F%2F%2F2024%2F09%2F30%2Fmy-strange-experiences-with-automattic-part-3%2F&amp;format=xml">
+</head>
+
+<body class="wp-singular post-template-default single single-post postid-637 single-format-standard wp-embed-responsive wp-theme-aldatheme">
+
+<div class="wp-site-blocks"><header class="site-header wp-block-template-part"><p class="wp-block-site-title has-large-font-size"><a href="/" target="_self" rel="home">aldavigdis.dev</a></p></header>
+
+
+    <article class="wp-block-group main-content is-layout-flow wp-block-group-is-layout-flow">
+    <h2 class="wp-block-post-title">My strange experiences with Automattic: Part 3</h2>
+    
+    <div class="wp-block-post-date"><time datetime="2024-09-30T14:29:18+00:00">September 30, 2024</time></div>
+    
+    
+    
+    <div class="entry-content wp-block-post-content is-layout-flow wp-block-post-content-is-layout-flow">
+<p>This one has taken a while to iron out. I wanted the third post in the series to focus more on the WordPress community and how it has been made to depend on Matt&rsquo;s leadership at Automattic&rsquo;s infrastructure.</p>
+
+
+
+<p>And how that is a very bad thing.</p>
+
+
+
+<p>This post is best read while listening to <a href="https://www.youtube.com/watch?v=JukTvlrh-Wk&amp;rco=1" data-type="link" data-id="https://www.youtube.com/watch?v=JukTvlrh-Wk&amp;rco=1" target="_blank" rel="noreferrer noopener">Know Your Enemy by Rage Against the Machine</a>. (<a href="https://youtu.be/ubY3RagH1Nw?si=CrD2frRZEP7ZI4Go" target="_blank" rel="noreferrer noopener">There&rsquo;s a jazzy cover if you are so inclined</a>.)</p>
+
+
+
+<p>This post will include vague references to events and facts but as this is an opinion piece and not an academic paper, I am not here to use a search engine or find things on the Internet Archive for you.</p>
+
+
+
+<p>As the community side of things has been shaken with quite serious and course-changing events since I started writing this series of posts, with things dating even further back &mdash; most of which would not have happened if it wasn&rsquo;t for Matt&rsquo;s lack of leadership &mdash; and his main goals being about sinking his claws into the ins-and-outs of the economy around what has become the default general-purpose CMS of the web and his name being plastered around as much as possible.</p>
+
+
+
+<p>The most recent move is the current attempt at forcing a large hosting company in the WordPress space to pay Automattic a large sum of money for using the WordPress logo and wordmark despite them being owned by the WordPress Foundation.</p>
+
+
+
+<p>Here are some bullet points of a fraction of what I have picked up on in the past year or so:</p>
+
+
+
+<ul class="wp-block-list">
+<li>Matt seems to treat what happens on WordPress.org to be within his personal domain, while those who contribute generally assume that their contributions are within the WordPress Foundation&rsquo;s scope</li>
+
+
+
+<li>Speaking of domains, Matt owns the related domain names personally, despite the logo and wordmark along with some other intellectual property supposedly being the property of the Foundation</li>
+
+
+
+<li>Rules are established for working groups within the WordPress Project, but generally do not apply to Matt and that seems to include harassment towards volunteers</li>
+
+
+
+<li>The plugin review process has been in a state of disarray for a while.</li>
+
+
+
+<li>The marketing team ended up being dissolved because Matt didn&rsquo;t want to take responsibilities for his actions</li>
+
+
+
+<li>Women seem to be disproportionally exposed to harassment within the scope of their volunteering for the WordPress project</li>
+</ul>
+
+
+
+<p>The internals of the WordPress project are not designed for anything but Matt&rsquo;s and Automattic&rsquo;s needs and requirements. Anything else is deprioritised.</p>
+
+
+
+<p>Volunteering within the project has in large parts shifted over to Automattic staff and contractors working for Audrey Capital (Matt&rsquo;s own investment company), with the Block Editor and FSE project being run as if it was an internal project within the company in addition to working groups such as Marketing being largely replaced with a different group of Automattic employees for not pleasing Matt&rsquo;s whims.</p>
+
+
+
+<p>In essence, those who do not work for or please Matt Mullenweg have been actively pushed out, while there&rsquo;s multiple businesses and individuals working on and contributing to the project, let alone those who depend on it in general.</p>
+
+
+
+<p>This means that it makes little sense to contribute to WordPress by committing code or participating on other aspects at this point in time.</p>
+
+
+
+<h2 class="wp-block-heading">What Just Happened Last Week?</h2>
+
+
+
+<p>Matt Mullenweg closed the WordCamp US conference last Sunday by attacking a large competitor in the WordPress space for supposedly not pulling their weight within the open source WordPress project in terms of time or money spent.</p>
+
+
+
+<p>There was also a lot of nonsensical rambling about his mother being confused, that hosting company not actually providing WordPress hosting because of a minor modification, false prophets and so on during that speech and the related blog post on his site, which had more religious undertones than the speech made by the late leader of Hezbollah the same week.</p>
+
+
+
+<p>Also that WP Engine was not actually providing WordPress because they were limiting a single resource-heavy feature. As if WordPress.com hasn&rsquo;t been going even further in providing a limited WordPress experience since the beginning.</p>
+
+
+
+<p>In short, Matt demanded that WP Engine paid money to Automattic, for using the WordPress logo and wordmark, which is actually owned by the WordPress Foundation.</p>
+
+
+
+<p>I guess there are more people than Matt&rsquo;s mother that are confused right now.</p>
+
+
+
+<p>WP Engine, the hosting company he attempted to steamroll over has been known to support the WordPress community in ways other than poking around in things that are under Matt&rsquo;s control and stepping on his toes. They were in fact one of the largest sponsors of that conference and maintain some important plugins for WordPress such as Advanced Custom Fields among other things.</p>
+
+
+
+<p>Matt offered to refund WP Engine their sponsorship money. He has done similar things before, assuming that he can pay himself out of trouble like that &mdash; in addition to other WordCamp sponsors angering him over clever advertising in the past.</p>
+
+
+
+<p>According to an exchange of cease and desist letters that happened shortly after, Matt seemed to have gone as far as threatening them, using text messages up until his closing speech.</p>
+
+
+
+<p>Anyone who has done any leadership work in volunteering spaces can tell you that you don&rsquo;t use threats or throw tantrums to get things done within volunteering projects or you&rsquo;ll end up being ousted or with key people walking out.</p>
+
+
+
+<p>This seems to be how Matt has gone about things in the past handful of years or even longer, and that is threatening the very existence of the wider WordPress project and the actual community involved.</p>
+
+
+
+<h2 class="wp-block-heading">Setting the Record Straight</h2>
+
+
+
+<h3 class="wp-block-heading">Why Not a Fork?</h3>
+
+
+
+<p>Some &mdash; including Matt himself, despite in his arrogant tone &mdash; have suggested forking the WordPress project and ClassicPress has existed for a while, despite having to re-fork the WordPress codebase recently as they were slightly behind on merging code from upstream.</p>
+
+
+
+<p>On the other hand, previous attempts to fork WordPress have not gone well (and Matt knows that) as the maintenance of a hard WordPress fork would require much more work than most people would assume, lest we forget that the monolithic codebase reflects the organisational structure and hierarchies behind it.</p>
+
+
+
+<p>There is much more behind the WordPress project than its core codebase and it would be a difficult undertaking to replicate that as well, so a small group of volunteers will never be able to cover everything that needs to be done.</p>
+
+
+
+<p>I believe that those of us who want to distance themselves the politics of WordPress while also wanting some change may not want to do the same mistake twice or be left with too much to chew on.</p>
+
+
+
+<p>What could be done here is a project aimed at transforming the codebase into more manageable packages and initiating groups responsible for the maintenance of each. I think the only way to do this while bypassing the current hierarchy is to initiate a consortium with an open membership and a strict, open governance structure that does not stand and fall with a single person or company insisting on being Player 1 all the time.</p>
+
+
+
+<p>On the other hand, perhaps we just need to start from scratch or move towards something else.</p>
+
+
+
+<h3 class="wp-block-heading">Can&rsquo;t Matt Simply do What He Wants with His Software and His Businesses?</h3>
+
+
+
+<p>Some assume that Matt <em>owns</em> WordPress or that he is the sole <em>owner of Automattic</em>, which he is isn&rsquo;t.</p>
+
+
+
+<p>Here&rsquo;s the thing &mdash; as Matt is not <em>the Founder of WordPres</em>, but <em>one of the co-founders</em> of the project, lest we forget the hundreds or thousands of people who have contributed to the project for the past 2 decades &mdash; The WordPress source code, its documentation and other associated work is as a whole not the private property or within the personal domain of Matt Mullenweg according to the software license the WordPress project has used from the beginning, let alone a general understanding of intellectual property law.</p>
+
+
+
+<p>I can&rsquo;t see how Matt&rsquo;s recent ideas on the rights to use the WordPress logo, the name or the wordmark requiring companies that he doesn&rsquo;t like to pay up are in compliance with the GPL license.</p>
+
+
+
+<p>This makes me wonder if this has to do with WP Engine not being a large Jetpack reseller like many large hosts in the WordPress space &mdash; as WP Engine has listed Jetpack on its list of banned plugins as being allowed but not particularly recommended.</p>
+
+
+
+<p>Jetpack is one of Automattic&rsquo;s most important products and the revenue associated to it is astronomical, so a large actor in the space ignoring Automattic&rsquo;s products altogether may have pushed Matt&rsquo;s buttons here.</p>
+
+
+
+<p>The non-profit WordPress Foundation and Automattic inc. are not within his personal domain either and there are very strict rules in place about how any relationship between the two is allowed in addition to how non-profit foundations are to be operated in general &mdash; and from the surface it seems like those rules are not being followed.</p>
+
+
+
+<p>The WordPress Foundation in particular is not very open about its operations and as someone who spent many years in NGO and party politics, I find it unusual not to be able to see its bylaws, a profile on each board member and at least a summary of its and general and board meetings on its website.</p>
+
+
+
+<h3 class="wp-block-heading">How is This Different from Linus Torvalds Throwing Tantrums at NVidia?</h3>
+
+
+
+<p>The key difference is that the likes of Linus Torvalds are smart enough to scope the work that they do so that their project doesn&rsquo;t depend on them alone or business entities and non-profits that they are in control of.</p>
+
+
+
+<p>The Linux Foundation, IBM or Canonical will not face serious business consequences for Linus&rsquo; tantrums as he is not the leader or general manager of either. He&rsquo;s just the guy who accepts pull requests for the Linux Kernel, even if he is a figurehead of sorts.</p>
+
+
+
+<p>In addition, Matt&rsquo;s ludicrous demands towards WP Engine are about money being provided to a for-profit enterprise for using trademarks owned by a non-profit entity, so this is now way beyond the usual <em>&ldquo;techbro throws tantrums and causes drama&rdquo;</em> things we&rsquo;ve seen in the past.</p>
+
+
+
+<p>Just like the Linux kernel is not a product of IBM, WordPress itself is not a product of Automattic or the creation of a single alleged wunderkind.</p>
+
+
+
+<p>One of the things that makers of free software like Linux distros and the Kernel itself do is offering updates and downloads from mirrored package repositories hosted by 3rd parties like 3rd party CDNs, universities and ISPs. This prevents large vendors or individuals from going rouge and blocking someone from running security updates.</p>
+
+
+
+<p>WordPress on the other hand, has always depended on infrastructure provided by Automattic.</p>
+
+
+
+<h2 class="wp-block-heading">Contributing Code to the WordPress Core is a Chore Better Lived Without</h2>
+
+
+
+<p>If you are extremely curious, you can probably dig in to the WordPress.org revision management system and find where I made my first contribution way back. The feeling of gratification and pride I got as a young up-and-coming developer and designer (after someone else took it on to write tests for it and it got implemented in the WordPress core) made it so worth the time it took.</p>
+
+
+
+<p>On the other hand, at this point in time, things have become unrewarding. Besides the bikeshedding involved (which is normal in a large and important project like this but could be managed better), tickets and patches can take years to get through the discussion and decision process if they aren&rsquo;t kicked off the table for any reason such as not aligning with Automattic&rsquo;s (or Matt&rsquo;s own) plans for that quarter.</p>
+
+
+
+<p>Let alone that the tools and methodologies used for the work are considered a burden in this day and age. I don&rsquo;t think I could convince my own team members to start using Subversion to contribute to a codebase that seems to disregard the underlying PHP programming language and its recommendations as it has developed since 2008.</p>
+
+
+
+<p>Not to mention the politics involved.</p>
+
+
+
+<p>I would go as far as saying that the myth about open source contributions simply being the same as working for free for someone else&rsquo;s company is true in this case.</p>
+
+
+
+<p>I don&rsquo;t think it&rsquo;s sensible for the companies that depend on WordPress to volunteer their own or their employees&rsquo; hours on dealing with the overhead involved here given the choice, let alone to consider it something extracurricular or for the greater good.</p>
+
+
+
+<p>As for myself, I have bypassed some of the shortcomings of WordPress by writing bespoke plugins when I could have sent in a patch for the WordPress core because the latter simply feels useless. (Did you know that WordPress breaks when your host doesn&rsquo;t offer a PHP <code>mail()</code> function?)</p>
+
+
+
+<p>In that context, it should be a no-brainer for a company such as WP Engine to contribute to the economy and community around WordPress in other, more effective ways than providing patches to the WordPress Core, in addition to the imaginary measurement contest Matt seems to have set up in the name of his ideologically loaded <em>Five for the Future</em> scheme.</p>
+
+
+
+<p>Matt&rsquo;s arguments about WP Engine preventing their employees from contributing to the core and his supposed offer to help out are also extremely hypocritical to me, as during my time with Automattic, I was told that fixing a two-line bug in the WordPress Core instead of working around it was considered not to be <em>a good use of my time</em>.</p>
+
+
+
+<h2 class="wp-block-heading">WordPress and Automattic as Subject to EU Legislation</h2>
+
+
+
+<p>For the past two decades, Automattic has shielded itself behind being a medium sized, privately owned US based corporate entity and has it as a general policy not to act on any foreign legal action &mdash; only court orders from the US legal system are adhered to, in particular when it comes to copyright, privacy and expression.</p>
+
+
+
+<p>This is despite the company having had worldwide operations and EU based holdings and wholly-owned subsidiaries within the EU for years.</p>
+
+
+
+<p>It seems like the company has simply flown under the radar all this time. Most people who use WordPress and even Automattic&rsquo;s commercial products on a daily basis don&rsquo;t know the true scope of the company&rsquo;s operations or who Matt Mullenweg is, so I can only imagine how things are among those outside the community or are not in on the newest Silicon Valley gossip.</p>
+
+
+
+<p>Now the CMS that runs the majority of the World Wide Web, which is in turn dependent on a social media company that retains pictures of dead children, rolled backs its specific ban on deadnaming trans people and forced millions of users into sharing their data with OpenAI needs to come under public scrutiny at some point.</p>
+
+
+
+<p>Jetpack is one of Automattic&rsquo;s most important products. It enables self-hosted WordPress sites to use services that are facilitated from WordPress.com. What not everyone knows is that those sites are mirrored over to the WordPress.com infrastructure, including WooCommerce customer data and purchase histories &mdash; and that infrastructure is as far as I understand the GDPR &mdash; not compatible with European privacy regulations.</p>
+
+
+
+<p>Automattic even kept citing the US/EU Privacy Shield for a while as the basis of its compliance, despite an ECJ judgement invalidating that framework, proving that they either have no idea about how these things work or that there is something else going on internally.</p>
+
+
+
+<p>In addition, Automattic does not follow European copyright law either, as a year ago I requested the takedown of my own intellectual property from their services (my own picture that I took of myself) that was being maliciously hosted on their CDN, and was met with the Napster defence and a statement that only US law applies to their operations. (Other platforms removed the image within a short time period and one even banned a user for repeat violations.)</p>
+
+
+
+<p>Furthermore, acquiring Tumblr, which is orders of magnitude larger than WordPress.com in terms of its active user base, traffic and content generation did nothing to make Automattic a smaller target to European regulators.</p>
+
+
+
+<p>Heather Burns, who formerly led regulatory compliance work within the WordPress project (namely the GDPR and Cookie Compliance feature) until Matt mocked her on stage at WordCamp had this to say around the time Matt harassed and published private details on an Irish trans woman earlier this year:</p>
+
+
+
+<figure class="wp-block-image size-full is-resized"><img fetchpriority="high" decoding="async" width="1080" height="1043" src="/wp-content/uploads/2024/09/6ce61d8f0393fccf.png" alt="A Twitter post from Heather Burns, February 22 2024: I once tried to explain to him that if you're going to constantly boast about the open web, you're pointing a big blinking red arrow over your head for politicians and regulators. His reply was that I was welcome to apply for a customer service role.
+
+In response to @InternetSlug: the ceo of a social media platform airing out a laundry list if every username a person has ever used on their platform with malicious intent should make anyone using tumblr extremely worried about the ways he could potentially use other data he has access to." class="wp-image-644" style="width:500px" srcset="/wp-content/uploads/2024/09/6ce61d8f0393fccf.png 1080w, /wp-content/uploads/2024/09/6ce61d8f0393fccf-300x290.png 300w, /wp-content/uploads/2024/09/6ce61d8f0393fccf-1024x989.png 1024w, /wp-content/uploads/2024/09/6ce61d8f0393fccf-768x742.png 768w" sizes="(max-width: 1080px) 100vw, 1080px"></figure>
+
+
+
+<p>For the record, I&rsquo;ve had a printout of this Twitter post glued to my screen at the office for a while now, as I know Matt has access to much more than random data from Tumblr. Meanwhile, the market share of WordPress seems to have crossed the 60% mark.</p>
+
+
+
+<p>Matt behaves like a teenage mid-2000&rsquo;s forum admin when it comes to his responsibilities.</p>
+
+
+
+<p>Last week, after having conflated the non-profit WordPress Foundation and his for-profit Automattic inc, indicating that what happens on WordPress.org is within his personal domain (in both senses of the word), Matt Mullenweg has called a legal and regulatory airstrike on himself, which may expose more underlying and prevalent issues than the current exchange of letters between Automattic and WP Engine.</p>
+
+
+
+<p>In addition to this, the company conducts false self employment contracts within the EU/EEA, despite owning and operating EU based subsidiaries for asset holding and payroll purposes. This means that many of the people who work for Automattic are technically external contractors despite acting on behalf of the company, holding business cards with the company logo or conducting WordCamp talks on behalf of the company. (Which rendered legal action about what I endured as good as impossible, as I did not have any rights as an actual employee and my contract was with Automattic in California, under US law.)</p>
+
+
+
+<p>To summarise things from the perspective of someone who lives and works in the EU/EEA:</p>
+
+
+
+<ol class="wp-block-list">
+<li>Automattic inc owns and operates web hosting infrastructure and edge nodes within the EU/EEA and around the European continent</li>
+
+
+
+<li>Automattic inc. owns and operates wholly-owned subsidiaries within the EU/EEA and the UK (Ireland, Spain, the UK and probably others) which are used for asset holding and payroll</li>
+
+
+
+<li>It is a fact Automattic inc. has generally ignored comments and concerns about compliance with EU privacy and copyright legislation, namely the GDPR, and did not acknowledge the basis of its assumed compliance being invalidated by the European Court of Justice</li>
+
+
+
+<li>Data hosted on self-hosted WordPress sites that use Jetpack is copied over to the WordPress.com infrastructure, which probably has never been GDPR compliant as I understand it</li>
+
+
+
+<li>Automattic does not adhere to European copyright legislation, claiming that only US law applies to their operations, in contrast to other social media companies that comply within the EU legal framework</li>
+
+
+
+<li>Matt did harass a Tumblr user earlier this year, chasing her across platforms, using her private information against her</li>
+
+
+
+<li>Automattic inc. may be actively miscategorising its EU workers; as they need to reside within the same country as one of the EU subsidiaries in order not to be classified as full-time contractors without the rights and protection of actual employees (this is called false self employment and is not very orthodox on the legal side of things)</li>
+
+
+
+<li>By abusing the non-profit WordPress Foundation for selectively cutting competitors from access to the WordPress Plugin Directory and other important update and security services, Matt Mullenweg is illustrating the importance of the EU Digital Markets Act, potentially making his enterprise a subject to being classified as a <em>Designated Gatekeeper</em> by the EU Commission</li>
+</ol>
+
+
+
+<p>I am not a lawyer myself and I would like to believe that Automattic&rsquo;s legal department is acting in good faith and is simply unaware of there being a world outside of the United States and the State of California in particular. On the other hand I would like to think that my ex coworkers (and in particular my Secret Santa from 2018) are some of the smartest and most talented people in the business. (But we can only have one without the other, so which is it?)</p>
+
+
+
+<p>In any case, I would be happy to hop on the next train to Brussels to discuss what is happening within the WordPress community to regulators and the same goes with any lawmakers and regulators within individual EU and EEA countries.</p>
+
+
+
+<h2 class="wp-block-heading">What Now?</h2>
+
+
+
+<p>Matt Mullenweg&rsquo;s unquestioned access to infrastructure and resources across the WordPress project, the WordPress Foundation and Automattic inc, which owns and operates the infrastructure the project depends on &mdash; in addition to the actions he has taken in the past week and earlier this year &mdash; is something that I would consider to be a grave security concern and the largest existential threat to the WordPress project itself.</p>
+
+
+
+<p>The current situation does not warrant everyone jumping in and immediately making the switch to something else. Good support contracts and removal of any dependence on Automattic&rsquo;s products and services should be the first order.</p>
+
+
+
+<p>Ideologically speaking, this may be be hard to consider, especially for those who came across WordPress early on as they were attracted by the open source spirit of the project.</p>
+
+
+
+<p>If WordPress is to stay the default choice for new website projects, then Matt Mullenweg and his cronies need to be removed from any sort of leadership role.</p>
+
+
+
+<p>A couple of years ago, I could have imagined Matt acting as a figurehead or influencer. We are well past that point however.</p>
+
+
+
+<p>What I find more realistic, is the other large players in the industry initiating and supporting a hard fork, with a solid and open governance structure and a roadmap towards modularity and actual openness.</p>
+
+
+
+<p>In addition, Matt may take it upon himself to replace the GPL license the WordPress project has used from the beginning. This may range from the Mozilla Public License that the Gutenberg project is already licensed under to pulling the rug entirely from the community by doing something similar to HashiCorp, which moved its licence over to the Business Source License, causing the likes of Vagrant to be published as <em>&ldquo;source available&rdquo;</em> products, fully controlled by a single vendor.</p>
+
+
+
+<p>Similar things are already being done with the trademark policy. (As enforceable as it may be.)</p>
+
+
+
+<p>Things will not go well if this persists and I think Matt&rsquo;s aggressive statements and behaviour have already pushed what we know as WordPress today beyond its tipping point.</p>
+
+
+
+<p>My advice to anyone depending on WordPress related work as their main source of income or their livelihood is to diversify and update their skills. This especially applies to those who believe that WordPress came as a godsend to their lives at some point as we are now beyond Peak WordPress.</p>
+
+
+
+<p>The same goes to those running hosting companies.</p>
+
+
+
+<p>Diversify away from WordPress.</p>
+</div>
+    </article>
+
+
+
+    <aside class="wp-block-group author-info is-layout-flow wp-block-group-is-layout-flow">
+    <div class="wp-block-post-author has-medium-font-size"><div class="wp-block-post-author__avatar"><img alt="" src="https://secure.gravatar.com/avatar/4ccdaeb5f30a50947d0a51a9d347be281d1885d1cdd10e8180640b7dff557749?s=192&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/4ccdaeb5f30a50947d0a51a9d347be281d1885d1cdd10e8180640b7dff557749?s=384&amp;d=mm&amp;r=g 2x" class="avatar avatar-192 photo" height="192" width="192" decoding="async"></div><div class="wp-block-post-author__content"><p class="wp-block-post-author__name">Alda Vigd&iacute;s Skarph&eacute;&eth;insd&oacute;ttir</p><p class="wp-block-post-author__bio">Having made things for the web since the 90&rsquo;s, Alda has found herself in the position of being a jack of all trades when it comes to full stack web development and system operations. She&rsquo;s currently consulting in the hosting sector and open to new opportunities.</p></div></div>
+    </aside>
+
+
+<div class="site-footer wp-block-template-part">
+    <footer class="wp-block-group has-s-font-size is-layout-constrained wp-block-group-is-layout-constrained">
+    <p class="has-s-font-size">
+        This is a project by
+        <a href="https://aldavigdis.is/" target="_blank">Alda Vigd&iacute;s</a>.
+    </p>
+    
+    </footer>
+
+</div>
+</div>
+<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"\/*"},{"not":{"href_matches":["\/wp-*.php","\/wp-admin\/*","\/wp-content\/uploads\/*","\/wp-content\/*","\/wp-content\/plugins\/*","\/wp-content\/themes\/aldatheme\/*","\/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+<script id="wp-block-template-skip-link-js-after">
+	( function() {
+		var skipLinkTarget = document.querySelector( 'main' ),
+			sibling,
+			skipLinkTargetID,
+			skipLink;
+
+		// Early exit if a skip-link target can't be located.
+		if ( ! skipLinkTarget ) {
+			return;
+		}
+
+		/*
+		 * Get the site wrapper.
+		 * The skip-link will be injected in the beginning of it.
+		 */
+		sibling = document.querySelector( '.wp-site-blocks' );
+
+		// Early exit if the root element was not found.
+		if ( ! sibling ) {
+			return;
+		}
+
+		// Get the skip-link target's ID, and generate one if it doesn't exist.
+		skipLinkTargetID = skipLinkTarget.id;
+		if ( ! skipLinkTargetID ) {
+			skipLinkTargetID = 'wp--skip-link--target';
+			skipLinkTarget.id = skipLinkTargetID;
+		}
+
+		// Create the skip link.
+		skipLink = document.createElement( 'a' );
+		skipLink.classList.add( 'skip-link', 'screen-reader-text' );
+		skipLink.id = 'wp-skip-link';
+		skipLink.href = '#' + skipLinkTargetID;
+		skipLink.innerText = 'Skip to content';
+
+		// Inject the skip link.
+		sibling.parentElement.insertBefore( skipLink, sibling );
+	}() );
+	
+</script>
+</body>
+</html>

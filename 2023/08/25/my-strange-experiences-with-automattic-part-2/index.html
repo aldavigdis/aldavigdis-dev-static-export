@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="max-image-preview:large">
+	<style>img:is([sizes="auto" i], [sizes^="auto," i]) { contain-intrinsic-size: 3000px 1500px }</style>
+	<title>My strange experiences with Automattic: Part 2 &ndash; aldavigdis.dev</title>
+<link rel="alternate" type="application/rss+xml" title="aldavigdis.dev &raquo; Feed" href="/feed/">
+<link rel="alternate" type="application/rss+xml" title="aldavigdis.dev &raquo; Comments Feed" href="/comments/feed/">
+<script>
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16.0.1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16.0.1\/svg\/","svgExt":".svg","source":{"concatemoji":"\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.8.3"}};
+/*! This file is auto-generated */
+!function(s,n){var o,i,e;function c(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function p(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data),a=(e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0),new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data));return t.every(function(e,t){return e===a[t]})}function u(e,t){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);for(var n=e.getImageData(16,16,1,1),a=0;a<n.data.length;a++)if(0!==n.data[a])return!1;return!0}function f(e,t,n,a){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\udde8\ud83c\uddf6","\ud83c\udde8\u200b\ud83c\uddf6")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!a(e,"\ud83e\udedf")}return!1}function g(e,t,n,a){var r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):s.createElement("canvas"),o=r.getContext("2d",{willReadFrequently:!0}),i=(o.textBaseline="top",o.font="600 32px Arial",{});return e.forEach(function(e){i[e]=t(o,e,n,a)}),i}function t(e){var t=s.createElement("script");t.src=e,t.defer=!0,s.head.appendChild(t)}"undefined"!=typeof Promise&&(o="wpEmojiSettingsSupports",i=["flag","emoji"],n.supports={everything:!0,everythingExceptFlag:!0},e=new Promise(function(e){s.addEventListener("DOMContentLoaded",e,{once:!0})}),new Promise(function(t){var n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+g.toString()+"("+[JSON.stringify(i),f.toString(),p.toString(),u.toString()].join(",")+"));",a=new Blob([e],{type:"text/javascript"}),r=new Worker(URL.createObjectURL(a),{name:"wpTestEmojiSupports"});return void(r.onmessage=function(e){c(n=e.data),r.terminate(),t(n)})}catch(e){}c(n=g(i,f,p,u))}t(n)}).then(function(e){for(var t in e)n.supports[t]=e[t],n.supports.everything=n.supports.everything&&n.supports[t],"flag"!==t&&(n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&n.supports[t]);n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&!n.supports.flag,n.DOMReady=!1,n.readyCallback=function(){n.DOMReady=!0}}).then(function(){return e}).then(function(){var e;n.supports.everything||(n.readyCallback(),(e=n.source||{}).concatemoji?t(e.concatemoji):e.wpemoji&&e.twemoji&&(t(e.twemoji),t(e.wpemoji)))}))}((window,document),window._wpemojiSettings);
+</script>
+<style id="wp-block-site-title-inline-css">
+.wp-block-site-title{box-sizing:border-box}.wp-block-site-title :where(a){color:inherit;font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;letter-spacing:inherit;line-height:inherit;text-decoration:inherit}
+</style>
+<style id="wp-block-template-part-theme-inline-css">
+:root :where(.wp-block-template-part.has-background){margin-bottom:0;margin-top:0;padding:1.25em 2.375em}
+</style>
+<style id="wp-block-post-title-inline-css">
+.wp-block-post-title{box-sizing:border-box;word-break:break-word}.wp-block-post-title :where(a){display:inline-block;font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;letter-spacing:inherit;line-height:inherit;text-decoration:inherit}
+</style>
+<style id="wp-block-post-date-inline-css">
+.wp-block-post-date{box-sizing:border-box}
+</style>
+<style id="wp-block-post-featured-image-inline-css">
+.wp-block-post-featured-image{margin-left:0;margin-right:0}.wp-block-post-featured-image a{display:block;height:100%}.wp-block-post-featured-image :where(img){box-sizing:border-box;height:auto;max-width:100%;vertical-align:bottom;width:100%}.wp-block-post-featured-image.alignfull img,.wp-block-post-featured-image.alignwide img{width:100%}.wp-block-post-featured-image .wp-block-post-featured-image__overlay.has-background-dim{background-color:#000;inset:0;position:absolute}.wp-block-post-featured-image{position:relative}.wp-block-post-featured-image .wp-block-post-featured-image__overlay.has-background-gradient{background-color:initial}.wp-block-post-featured-image .wp-block-post-featured-image__overlay.has-background-dim-0{opacity:0}.wp-block-post-featured-image .wp-block-post-featured-image__overlay.has-background-dim-10{opacity:.1}.wp-block-post-featured-image .wp-block-post-featured-image__overlay.has-background-dim-20{opacity:.2}.wp-block-post-featured-image .wp-block-post-featured-image__overlay.has-background-dim-30{opacity:.3}.wp-block-post-featured-image .wp-block-post-featured-image__overlay.has-background-dim-40{opacity:.4}.wp-block-post-featured-image .wp-block-post-featured-image__overlay.has-background-dim-50{opacity:.5}.wp-block-post-featured-image .wp-block-post-featured-image__overlay.has-background-dim-60{opacity:.6}.wp-block-post-featured-image .wp-block-post-featured-image__overlay.has-background-dim-70{opacity:.7}.wp-block-post-featured-image .wp-block-post-featured-image__overlay.has-background-dim-80{opacity:.8}.wp-block-post-featured-image .wp-block-post-featured-image__overlay.has-background-dim-90{opacity:.9}.wp-block-post-featured-image .wp-block-post-featured-image__overlay.has-background-dim-100{opacity:1}.wp-block-post-featured-image:where(.alignleft,.alignright){width:100%}
+</style>
+<style id="wp-block-paragraph-inline-css">
+.is-small-text{font-size:.875em}.is-regular-text{font-size:1em}.is-large-text{font-size:2.25em}.is-larger-text{font-size:3em}.has-drop-cap:not(:focus):first-letter{float:left;font-size:8.4em;font-style:normal;font-weight:100;line-height:.68;margin:.05em .1em 0 0;text-transform:uppercase}body.rtl .has-drop-cap:not(:focus):first-letter{float:none;margin-left:.1em}p.has-drop-cap.has-background{overflow:hidden}:root :where(p.has-background){padding:1.25em 2.375em}:where(p.has-text-color:not(.has-link-color)) a{color:inherit}p.has-text-align-left[style*="writing-mode:vertical-lr"],p.has-text-align-right[style*="writing-mode:vertical-rl"]{rotate:180deg}
+</style>
+<style id="wp-block-button-inline-css">
+.wp-block-button__link{align-content:center;box-sizing:border-box;cursor:pointer;display:inline-block;height:100%;text-align:center;word-break:break-word}.wp-block-button__link.aligncenter{text-align:center}.wp-block-button__link.alignright{text-align:right}:where(.wp-block-button__link){border-radius:9999px;box-shadow:none;padding:calc(.667em + 2px) calc(1.333em + 2px);text-decoration:none}.wp-block-button[style*=text-decoration] .wp-block-button__link{text-decoration:inherit}.wp-block-buttons>.wp-block-button.has-custom-width{max-width:none}.wp-block-buttons>.wp-block-button.has-custom-width .wp-block-button__link{width:100%}.wp-block-buttons>.wp-block-button.has-custom-font-size .wp-block-button__link{font-size:inherit}.wp-block-buttons>.wp-block-button.wp-block-button__width-25{width:calc(25% - var(--wp--style--block-gap, .5em)*.75)}.wp-block-buttons>.wp-block-button.wp-block-button__width-50{width:calc(50% - var(--wp--style--block-gap, .5em)*.5)}.wp-block-buttons>.wp-block-button.wp-block-button__width-75{width:calc(75% - var(--wp--style--block-gap, .5em)*.25)}.wp-block-buttons>.wp-block-button.wp-block-button__width-100{flex-basis:100%;width:100%}.wp-block-buttons.is-vertical>.wp-block-button.wp-block-button__width-25{width:25%}.wp-block-buttons.is-vertical>.wp-block-button.wp-block-button__width-50{width:50%}.wp-block-buttons.is-vertical>.wp-block-button.wp-block-button__width-75{width:75%}.wp-block-button.is-style-squared,.wp-block-button__link.wp-block-button.is-style-squared{border-radius:0}.wp-block-button.no-border-radius,.wp-block-button__link.no-border-radius{border-radius:0!important}:root :where(.wp-block-button .wp-block-button__link.is-style-outline),:root :where(.wp-block-button.is-style-outline>.wp-block-button__link){border:2px solid;padding:.667em 1.333em}:root :where(.wp-block-button .wp-block-button__link.is-style-outline:not(.has-text-color)),:root :where(.wp-block-button.is-style-outline>.wp-block-button__link:not(.has-text-color)){color:currentColor}:root :where(.wp-block-button .wp-block-button__link.is-style-outline:not(.has-background)),:root :where(.wp-block-button.is-style-outline>.wp-block-button__link:not(.has-background)){background-color:initial;background-image:none}
+</style>
+<style id="wp-block-buttons-inline-css">
+.wp-block-buttons{box-sizing:border-box}.wp-block-buttons.is-vertical{flex-direction:column}.wp-block-buttons.is-vertical>.wp-block-button:last-child{margin-bottom:0}.wp-block-buttons>.wp-block-button{display:inline-block;margin:0}.wp-block-buttons.is-content-justification-left{justify-content:flex-start}.wp-block-buttons.is-content-justification-left.is-vertical{align-items:flex-start}.wp-block-buttons.is-content-justification-center{justify-content:center}.wp-block-buttons.is-content-justification-center.is-vertical{align-items:center}.wp-block-buttons.is-content-justification-right{justify-content:flex-end}.wp-block-buttons.is-content-justification-right.is-vertical{align-items:flex-end}.wp-block-buttons.is-content-justification-space-between{justify-content:space-between}.wp-block-buttons.aligncenter{text-align:center}.wp-block-buttons:not(.is-content-justification-space-between,.is-content-justification-right,.is-content-justification-left,.is-content-justification-center) .wp-block-button.aligncenter{margin-left:auto;margin-right:auto;width:100%}.wp-block-buttons[style*=text-decoration] .wp-block-button,.wp-block-buttons[style*=text-decoration] .wp-block-button__link{text-decoration:inherit}.wp-block-buttons.has-custom-font-size .wp-block-button__link{font-size:inherit}.wp-block-buttons .wp-block-button__link{width:100%}.wp-block-button.aligncenter{text-align:center}
+</style>
+<style id="wp-block-heading-inline-css">
+h1.has-background,h2.has-background,h3.has-background,h4.has-background,h5.has-background,h6.has-background{padding:1.25em 2.375em}h1.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h1.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h2.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h2.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h3.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h3.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h4.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h4.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h5.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h5.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h6.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h6.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]){rotate:180deg}
+</style>
+<style id="wp-block-quote-inline-css">
+.wp-block-quote{box-sizing:border-box;overflow-wrap:break-word}.wp-block-quote.is-large:where(:not(.is-style-plain)),.wp-block-quote.is-style-large:where(:not(.is-style-plain)){margin-bottom:1em;padding:0 1em}.wp-block-quote.is-large:where(:not(.is-style-plain)) p,.wp-block-quote.is-style-large:where(:not(.is-style-plain)) p{font-size:1.5em;font-style:italic;line-height:1.6}.wp-block-quote.is-large:where(:not(.is-style-plain)) cite,.wp-block-quote.is-large:where(:not(.is-style-plain)) footer,.wp-block-quote.is-style-large:where(:not(.is-style-plain)) cite,.wp-block-quote.is-style-large:where(:not(.is-style-plain)) footer{font-size:1.125em;text-align:right}.wp-block-quote>cite{display:block}
+</style>
+<style id="wp-block-quote-theme-inline-css">
+.wp-block-quote{border-left:.25em solid;margin:0 0 1.75em;padding-left:1em}.wp-block-quote cite,.wp-block-quote footer{color:currentColor;font-size:.8125em;font-style:normal;position:relative}.wp-block-quote:where(.has-text-align-right){border-left:none;border-right:.25em solid;padding-left:0;padding-right:1em}.wp-block-quote:where(.has-text-align-center){border:none;padding-left:0}.wp-block-quote.is-large,.wp-block-quote.is-style-large,.wp-block-quote:where(.is-style-plain){border:none}
+</style>
+<link rel="stylesheet" id="wp-block-image-css" href="/wp-includes/blocks/image/style.min.css?ver=6.8.3" media="all">
+<style id="wp-block-image-theme-inline-css">
+:root :where(.wp-block-image figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme :root :where(.wp-block-image figcaption){color:#ffffffa6}.wp-block-image{margin:0 0 1em}
+</style>
+<style id="wp-block-columns-inline-css">
+.wp-block-columns{align-items:normal!important;box-sizing:border-box;display:flex;flex-wrap:wrap!important}@media (min-width:782px){.wp-block-columns{flex-wrap:nowrap!important}}.wp-block-columns.are-vertically-aligned-top{align-items:flex-start}.wp-block-columns.are-vertically-aligned-center{align-items:center}.wp-block-columns.are-vertically-aligned-bottom{align-items:flex-end}@media (max-width:781px){.wp-block-columns:not(.is-not-stacked-on-mobile)>.wp-block-column{flex-basis:100%!important}}@media (min-width:782px){.wp-block-columns:not(.is-not-stacked-on-mobile)>.wp-block-column{flex-basis:0;flex-grow:1}.wp-block-columns:not(.is-not-stacked-on-mobile)>.wp-block-column[style*=flex-basis]{flex-grow:0}}.wp-block-columns.is-not-stacked-on-mobile{flex-wrap:nowrap!important}.wp-block-columns.is-not-stacked-on-mobile>.wp-block-column{flex-basis:0;flex-grow:1}.wp-block-columns.is-not-stacked-on-mobile>.wp-block-column[style*=flex-basis]{flex-grow:0}:where(.wp-block-columns){margin-bottom:1.75em}:where(.wp-block-columns.has-background){padding:1.25em 2.375em}.wp-block-column{flex-grow:1;min-width:0;overflow-wrap:break-word;word-break:break-word}.wp-block-column.is-vertically-aligned-top{align-self:flex-start}.wp-block-column.is-vertically-aligned-center{align-self:center}.wp-block-column.is-vertically-aligned-bottom{align-self:flex-end}.wp-block-column.is-vertically-aligned-stretch{align-self:stretch}.wp-block-column.is-vertically-aligned-bottom,.wp-block-column.is-vertically-aligned-center,.wp-block-column.is-vertically-aligned-top{width:100%}
+</style>
+<style id="wp-block-post-content-inline-css">
+.wp-block-post-content{display:flow-root}
+</style>
+<style id="wp-block-group-inline-css">
+.wp-block-group{box-sizing:border-box}:where(.wp-block-group.wp-block-group-is-layout-constrained){position:relative}
+</style>
+<style id="wp-block-group-theme-inline-css">
+:where(.wp-block-group.has-background){padding:1.25em 2.375em}
+</style>
+<style id="wp-block-post-author-inline-css">
+.wp-block-post-author{box-sizing:border-box;display:flex;flex-wrap:wrap}.wp-block-post-author__byline{font-size:.5em;margin-bottom:0;margin-top:0;width:100%}.wp-block-post-author__avatar{margin-right:1em}.wp-block-post-author__bio{font-size:.7em;margin-bottom:.7em}.wp-block-post-author__content{flex-basis:0;flex-grow:1}.wp-block-post-author__name{margin:0}
+</style>
+<style id="wp-emoji-styles-inline-css">
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+</style>
+<style id="wp-block-library-inline-css">
+:root{--wp-admin-theme-color:#007cba;--wp-admin-theme-color--rgb:0,124,186;--wp-admin-theme-color-darker-10:#006ba1;--wp-admin-theme-color-darker-10--rgb:0,107,161;--wp-admin-theme-color-darker-20:#005a87;--wp-admin-theme-color-darker-20--rgb:0,90,135;--wp-admin-border-width-focus:2px;--wp-block-synced-color:#7a00df;--wp-block-synced-color--rgb:122,0,223;--wp-bound-block-color:var(--wp-block-synced-color)}@media (min-resolution:192dpi){:root{--wp-admin-border-width-focus:1.5px}}.wp-element-button{cursor:pointer}:root{--wp--preset--font-size--normal:16px;--wp--preset--font-size--huge:42px}:root .has-very-light-gray-background-color{background-color:#eee}:root .has-very-dark-gray-background-color{background-color:#313131}:root .has-very-light-gray-color{color:#eee}:root .has-very-dark-gray-color{color:#313131}:root .has-vivid-green-cyan-to-vivid-cyan-blue-gradient-background{background:linear-gradient(135deg,#00d084,#0693e3)}:root .has-purple-crush-gradient-background{background:linear-gradient(135deg,#34e2e4,#4721fb 50%,#ab1dfe)}:root .has-hazy-dawn-gradient-background{background:linear-gradient(135deg,#faaca8,#dad0ec)}:root .has-subdued-olive-gradient-background{background:linear-gradient(135deg,#fafae1,#67a671)}:root .has-atomic-cream-gradient-background{background:linear-gradient(135deg,#fdd79a,#004a59)}:root .has-nightshade-gradient-background{background:linear-gradient(135deg,#330968,#31cdcf)}:root .has-midnight-gradient-background{background:linear-gradient(135deg,#020381,#2874fc)}.has-regular-font-size{font-size:1em}.has-larger-font-size{font-size:2.625em}.has-normal-font-size{font-size:var(--wp--preset--font-size--normal)}.has-huge-font-size{font-size:var(--wp--preset--font-size--huge)}.has-text-align-center{text-align:center}.has-text-align-left{text-align:left}.has-text-align-right{text-align:right}#end-resizable-editor-section{display:none}.aligncenter{clear:both}.items-justified-left{justify-content:flex-start}.items-justified-center{justify-content:center}.items-justified-right{justify-content:flex-end}.items-justified-space-between{justify-content:space-between}.screen-reader-text{border:0;clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;word-wrap:normal!important}.screen-reader-text:focus{background-color:#ddd;clip-path:none;color:#444;display:block;font-size:1em;height:auto;left:5px;line-height:normal;padding:15px 23px 14px;text-decoration:none;top:5px;width:auto;z-index:100000}html :where(.has-border-color){border-style:solid}html :where([style*=border-top-color]){border-top-style:solid}html :where([style*=border-right-color]){border-right-style:solid}html :where([style*=border-bottom-color]){border-bottom-style:solid}html :where([style*=border-left-color]){border-left-style:solid}html :where([style*=border-width]){border-style:solid}html :where([style*=border-top-width]){border-top-style:solid}html :where([style*=border-right-width]){border-right-style:solid}html :where([style*=border-bottom-width]){border-bottom-style:solid}html :where([style*=border-left-width]){border-left-style:solid}html :where(img[class*=wp-image-]){height:auto;max-width:100%}:where(figure){margin:0 0 1em}html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:var(--wp-admin--admin-bar--height,0px)}@media screen and (max-width:600px){html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:0px}}
+</style>
+<link rel="stylesheet" id="aldatheme_style-css" href="/wp-content/themes/aldatheme/style.css?ver=0.1.4-2025-10-06" media="all">
+<style id="global-styles-inline-css">
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--color--almost-black: #333;--wp--preset--color--light-grey: #F0F0F4;--wp--preset--color--grey: #ccc;--wp--preset--color--dark-grey: #555;--wp--preset--color--magenta: #dc68dc;--wp--preset--color--magenta-alt: #dc68a2;--wp--preset--color--orange: #dca268;--wp--preset--color--green: #a2dc68;--wp--preset--color--pastel-magenta: #fff0ff;--wp--preset--color--pastel-magenta-alt: #fff0f8;--wp--preset--color--pastel-orange: #fff8f0;--wp--preset--color--pastel-yellow: #fffff0;--wp--preset--color--pastel-green: #f8fff0;--wp--preset--color--dark-magenta: #6a256a;--wp--preset--color--dark-magenta-alt: #6a2548;--wp--preset--color--dark-orange: #6a4825;--wp--preset--color--dark-yellow: #6a6a25;--wp--preset--color--dark-green: #486a25;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--gradient--tequila-sunrise: linear-gradient(var(--wp--preset--color--magenta-alt) 33%, var(--wp--preset--color--orange) 133% );--wp--preset--gradient--queer-cocktail: linear-gradient(var(--wp--preset--color--magenta-alt) 0%, var(--wp--preset--color--magenta) 100%);--wp--preset--font-size--small: 12px;--wp--preset--font-size--medium: 16px;--wp--preset--font-size--large: 42px;--wp--preset--font-size--x-large: 72px;--wp--preset--font-family--libre-baskerville: Libre Baskerville, serif;--wp--preset--font-family--bitter: Bitter, serif;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:root { --wp--style--global--content-size: 840px;--wp--style--global--wide-size: 1100px; }:where(body) { margin: 0; }.wp-site-blocks > .alignleft { float: left; margin-right: 2em; }.wp-site-blocks > .alignright { float: right; margin-left: 2em; }.wp-site-blocks > .aligncenter { justify-content: center; margin-left: auto; margin-right: auto; }:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}.is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}.is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}.is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}.is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}.is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}body{padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px;}a:where(:not(.wp-element-button)){text-decoration: underline;}:root :where(.wp-element-button, .wp-block-button__link){background-color: #32373c;border-width: 0;color: #fff;font-family: inherit;font-size: inherit;line-height: inherit;padding: calc(0.667em + 2px) calc(1.333em + 2px);text-decoration: none;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-almost-black-color{color: var(--wp--preset--color--almost-black) !important;}.has-light-grey-color{color: var(--wp--preset--color--light-grey) !important;}.has-grey-color{color: var(--wp--preset--color--grey) !important;}.has-dark-grey-color{color: var(--wp--preset--color--dark-grey) !important;}.has-magenta-color{color: var(--wp--preset--color--magenta) !important;}.has-magenta-alt-color{color: var(--wp--preset--color--magenta-alt) !important;}.has-orange-color{color: var(--wp--preset--color--orange) !important;}.has-green-color{color: var(--wp--preset--color--green) !important;}.has-pastel-magenta-color{color: var(--wp--preset--color--pastel-magenta) !important;}.has-pastel-magenta-alt-color{color: var(--wp--preset--color--pastel-magenta-alt) !important;}.has-pastel-orange-color{color: var(--wp--preset--color--pastel-orange) !important;}.has-pastel-yellow-color{color: var(--wp--preset--color--pastel-yellow) !important;}.has-pastel-green-color{color: var(--wp--preset--color--pastel-green) !important;}.has-dark-magenta-color{color: var(--wp--preset--color--dark-magenta) !important;}.has-dark-magenta-alt-color{color: var(--wp--preset--color--dark-magenta-alt) !important;}.has-dark-orange-color{color: var(--wp--preset--color--dark-orange) !important;}.has-dark-yellow-color{color: var(--wp--preset--color--dark-yellow) !important;}.has-dark-green-color{color: var(--wp--preset--color--dark-green) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-almost-black-background-color{background-color: var(--wp--preset--color--almost-black) !important;}.has-light-grey-background-color{background-color: var(--wp--preset--color--light-grey) !important;}.has-grey-background-color{background-color: var(--wp--preset--color--grey) !important;}.has-dark-grey-background-color{background-color: var(--wp--preset--color--dark-grey) !important;}.has-magenta-background-color{background-color: var(--wp--preset--color--magenta) !important;}.has-magenta-alt-background-color{background-color: var(--wp--preset--color--magenta-alt) !important;}.has-orange-background-color{background-color: var(--wp--preset--color--orange) !important;}.has-green-background-color{background-color: var(--wp--preset--color--green) !important;}.has-pastel-magenta-background-color{background-color: var(--wp--preset--color--pastel-magenta) !important;}.has-pastel-magenta-alt-background-color{background-color: var(--wp--preset--color--pastel-magenta-alt) !important;}.has-pastel-orange-background-color{background-color: var(--wp--preset--color--pastel-orange) !important;}.has-pastel-yellow-background-color{background-color: var(--wp--preset--color--pastel-yellow) !important;}.has-pastel-green-background-color{background-color: var(--wp--preset--color--pastel-green) !important;}.has-dark-magenta-background-color{background-color: var(--wp--preset--color--dark-magenta) !important;}.has-dark-magenta-alt-background-color{background-color: var(--wp--preset--color--dark-magenta-alt) !important;}.has-dark-orange-background-color{background-color: var(--wp--preset--color--dark-orange) !important;}.has-dark-yellow-background-color{background-color: var(--wp--preset--color--dark-yellow) !important;}.has-dark-green-background-color{background-color: var(--wp--preset--color--dark-green) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-almost-black-border-color{border-color: var(--wp--preset--color--almost-black) !important;}.has-light-grey-border-color{border-color: var(--wp--preset--color--light-grey) !important;}.has-grey-border-color{border-color: var(--wp--preset--color--grey) !important;}.has-dark-grey-border-color{border-color: var(--wp--preset--color--dark-grey) !important;}.has-magenta-border-color{border-color: var(--wp--preset--color--magenta) !important;}.has-magenta-alt-border-color{border-color: var(--wp--preset--color--magenta-alt) !important;}.has-orange-border-color{border-color: var(--wp--preset--color--orange) !important;}.has-green-border-color{border-color: var(--wp--preset--color--green) !important;}.has-pastel-magenta-border-color{border-color: var(--wp--preset--color--pastel-magenta) !important;}.has-pastel-magenta-alt-border-color{border-color: var(--wp--preset--color--pastel-magenta-alt) !important;}.has-pastel-orange-border-color{border-color: var(--wp--preset--color--pastel-orange) !important;}.has-pastel-yellow-border-color{border-color: var(--wp--preset--color--pastel-yellow) !important;}.has-pastel-green-border-color{border-color: var(--wp--preset--color--pastel-green) !important;}.has-dark-magenta-border-color{border-color: var(--wp--preset--color--dark-magenta) !important;}.has-dark-magenta-alt-border-color{border-color: var(--wp--preset--color--dark-magenta-alt) !important;}.has-dark-orange-border-color{border-color: var(--wp--preset--color--dark-orange) !important;}.has-dark-yellow-border-color{border-color: var(--wp--preset--color--dark-yellow) !important;}.has-dark-green-border-color{border-color: var(--wp--preset--color--dark-green) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-tequila-sunrise-gradient-background{background: var(--wp--preset--gradient--tequila-sunrise) !important;}.has-queer-cocktail-gradient-background{background: var(--wp--preset--gradient--queer-cocktail) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}.has-libre-baskerville-font-family{font-family: var(--wp--preset--font-family--libre-baskerville) !important;}.has-bitter-font-family{font-family: var(--wp--preset--font-family--bitter) !important;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+</style>
+<style id="core-block-supports-inline-css">
+.wp-container-core-columns-is-layout-9d6595d7{flex-wrap:nowrap;}
+</style>
+<style id="wp-block-template-skip-link-inline-css">
+
+		.skip-link.screen-reader-text {
+			border: 0;
+			clip-path: inset(50%);
+			height: 1px;
+			margin: -1px;
+			overflow: hidden;
+			padding: 0;
+			position: absolute !important;
+			width: 1px;
+			word-wrap: normal !important;
+		}
+
+		.skip-link.screen-reader-text:focus {
+			background-color: #eee;
+			clip-path: none;
+			color: #444;
+			display: block;
+			font-size: 1em;
+			height: auto;
+			left: 5px;
+			line-height: normal;
+			padding: 15px 23px 14px;
+			text-decoration: none;
+			top: 5px;
+			width: auto;
+			z-index: 100000;
+		}
+</style>
+<link rel="https://api.w.org/" href="/wp-json/"><link rel="alternate" title="JSON" type="application/json" href="/wp-json/wp/v2/posts/362"><link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd">
+<meta name="generator" content="WordPress 6.8.3">
+<link rel="canonical" href="/2023/08/25/my-strange-experiences-with-automattic-part-2/">
+<link rel="shortlink" href="/?p=362">
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="/wp-json/oembed/1.0/embed?url=https%3A%2F%2F%2F2023%2F08%2F25%2Fmy-strange-experiences-with-automattic-part-2%2F">
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="/wp-json/oembed/1.0/embed?url=https%3A%2F%2F%2F2023%2F08%2F25%2Fmy-strange-experiences-with-automattic-part-2%2F&amp;format=xml">
+</head>
+
+<body class="wp-singular post-template-default single single-post postid-362 single-format-standard wp-embed-responsive wp-theme-aldatheme">
+
+<div class="wp-site-blocks"><header class="site-header wp-block-template-part"><p class="wp-block-site-title has-large-font-size"><a href="/" target="_self" rel="home">aldavigdis.dev</a></p></header>
+
+
+    <article class="wp-block-group main-content is-layout-flow wp-block-group-is-layout-flow">
+    <h2 class="wp-block-post-title">My strange experiences with Automattic: Part 2</h2>
+    
+    <div class="wp-block-post-date"><time datetime="2023-08-25T09:10:11+00:00">August 25, 2023</time></div>
+    
+    
+    
+    <div class="entry-content wp-block-post-content is-layout-flow wp-block-post-content-is-layout-flow">
+<p>This is part 2 of the story of my brief career at Automattic inc. Before you read on, in order to get the whole context, I highly recommend that you start by reading <a href="/2023/08/18/my-strange-experiences-with-automattic-part-1/">part 1</a> of this series where I go into my application process at Automattic.</p>
+
+
+
+<div class="wp-block-buttons is-layout-flex wp-block-buttons-is-layout-flex">
+<div class="wp-block-button has-custom-font-size has-medium-font-size"><a class="wp-block-button__link has-dark-magenta-background-color has-background wp-element-button" href="/2023/08/18/my-strange-experiences-with-automattic-part-1/">Read Part 1</a></div>
+</div>
+
+
+
+<p>My intent here is not to write a dirt piece on the company but to put its shortcomings into a context that can be understood as a whole, and as a way for me to seek some form of closure.</p>
+
+
+
+<p>I still take the approach here that the concept of Hanlon&rsquo;s Razor (<em>don&rsquo;t attribute to malice that which can adequately be explained by stupidity</em>) can be used when people and companies make singular and isolated mistakes, but when the extent of those goes beyond anything that can be described as accidental or a misunderstanding, then it no longer applies and the issues are in fact systemic.</p>
+
+
+
+<h2 class="wp-block-heading">Reactions to the previous post</h2>
+
+
+
+<p>I have received a lot of feedback since I wrote the previous post and I am quoting some of them below. All of them align with my own experiences and seem to hint at the trial period not being a test of anyone&rsquo;s skills.</p>
+
+
+
+<p>In order to protect people&rsquo;s identities, the names of those who&rsquo;ve been in touch to express their own similar experience have been removed and I have reworded some of the following quotes. Some were in the open on social media while others were communicated with me privately:</p>
+
+
+
+<blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow">
+<p>It was one of the weirdest job apps I&rsquo;ve ever dealt with. Similar issues [as you experienced] with no communications and, in my case, a trial coordinator that really didn&rsquo;t want me in a trial made it all such a waste of my time.</p>
+<cite>Anonymous former applicant 1</cite></blockquote>
+
+
+
+<p>Some describe a process that was designed to or has developed into a way to break down people&rsquo;s self perception, push for devotion and to leave them feeling inadequate or lacking.</p>
+
+
+
+<blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow">
+<p>I kept asking myself if this [negligence] was just a part of the test. I quit during my trial because I could not give them what they wanted, as if I was lacking something due to their own deficiencies.</p>
+<cite>Anonymous former applicant 2</cite></blockquote>
+
+
+
+<p>Automattic has described their process as something that can be done while remaining employed elsewhere, which may sound realistic when you only look at the number of trial project hours the company get billed for. However, I can only imagine what it is like having to work overtime, be a parent or having responsibilities outside of work while working on an Automattic trial project.</p>
+
+
+
+<blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow">
+<p>My coordinator left for his <abbr title="paid time off">PTO</abbr> early on in my trial. I experienced absolute hell as I was working on this along with my full time job. It did little but burn me out in the end, with no promise or idea of what I would even be offered for pay.</p>
+<cite>Anonymous former applicant 3</cite></blockquote>
+
+
+
+<p>It does feel like the trial period is designed to gauge if applicants can show enough devotion and therefore handle <em>embracing the chaos</em>, which is Automattic&rsquo;s way to excuse its management style and to make its employees feel responsible and guilty for it if it causes them to slip.</p>
+
+
+
+<p>I have even heard if someone who waited for getting a trial project assigned for weeks, which never happened but they still got hired. In comparison, none of those quoted above received an offer at the end of their trial period but have been successful in the world of WordPress.</p>
+
+
+
+<p>Something is obviously not working as it should here and it&rsquo;s the applicants and the potential talent pool that get broken.</p>
+
+
+
+<h2 class="wp-block-heading">Getting things going</h2>
+
+
+
+<p>By the end of the previous post, I was staying with friends in Belgium, had read over and signed the contract and started preparing to get my hands dirty on some real work.</p>
+
+
+
+<p>I upgraded my coworking space membership, ordered my equipment from a local Apple retailer that I trusted; got the most appropriate MacBook Pro model and trackpad for the job along with only using half the budget I had for getting a screen.</p>
+
+
+
+<p>Frankly speaking, I felt like my equipment budget was way overblown compared to what is considered to be normal at this side of the Atlantic, unless you need to be running several VMs and containers or compile complex code all day. The display budget alone was also high enough for me to only spend half of it and still having a relatively good one.</p>
+
+
+
+<p>But more on budgets and stipends in the next post in the series.</p>
+
+
+
+<p>I had high quality equipment on the way, certain hopes about things going well and a generally good outlook as I was pulling myself up from the rock bottom.</p>
+
+
+
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-9d6595d7 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+<figure class="wp-block-image size-full"><img decoding="async" src="/wp-content/uploads/2023/08/IMG_20180924_160954_995-1.jpg" alt="" class="wp-image-479" style="aspect-ratio:4/3;object-fit:cover"><figcaption class="wp-element-caption">A nice haul from the Apple retailer down the street. They had (very correctly) advised me not to get the LG 5k display as it was insanely overpriced. The computer and some other things are in that paper bag.</figcaption></figure>
+</div>
+
+
+
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+<figure class="wp-block-image size-large"><img fetchpriority="high" decoding="async" width="1024" height="810" src="/wp-content/uploads/2023/08/IMG_20190313_133348274-scaled-e1692620682438-1024x810.jpg" alt="" class="wp-image-475" style="aspect-ratio:4/3;object-fit:cover" srcset="/wp-content/uploads/2023/08/IMG_20190313_133348274-scaled-e1692620682438-1024x810.jpg 1024w, /wp-content/uploads/2023/08/IMG_20190313_133348274-scaled-e1692620682438-300x237.jpg 300w, /wp-content/uploads/2023/08/IMG_20190313_133348274-scaled-e1692620682438-768x608.jpg 768w, /wp-content/uploads/2023/08/IMG_20190313_133348274-scaled-e1692620682438-1536x1216.jpg 1536w, /wp-content/uploads/2023/08/IMG_20190313_133348274-scaled-e1692620682438-2048x1621.jpg 2048w" sizes="(max-width: 1024px) 100vw, 1024px"><figcaption class="wp-element-caption">And it looked pretty decent on my desk when paired with some of my own equipment. (The keyboard that I already had is so much better and far cheaper than an Apple-branded one.)</figcaption></figure>
+</div>
+</div>
+
+
+
+<h2 class="wp-block-heading">So how was your first day?</h2>
+
+
+
+<p>My first day as full time consultant at Automattic, I logged into Slack to get started and open up some of the channels I did not have access to before and to finally get to know my new workplace. I had some <abbr title="Direct messages">DM</abbr>s waiting and one of them was a sincere apology.</p>
+
+
+
+<p>Automattic&rsquo;s HR department runs a personnel database based on BuddyPress (because of course they do), maintained by its own HR development team. The good thing about this arrangement is that they can always program in features that off-the-shelf systems lack such as having a separate set of text fields for one&rsquo;s actual name and one&rsquo;s legal name, passport information and such separate from that and on a need-to-know basis.</p>
+
+
+
+<p>In principle, this is good for trans people and as I was still waiting for a change in Icelandic law that would enable me to change my legal name, so the system did have two separate sets of names &mdash; one for HR and those above me in the management chain, and one for everyone else.</p>
+
+
+
+<p>For a trans person who is just starting at a new workplace (especially a fully remote one), seeing one&rsquo;s <em>deadname</em> out in the open for all to see, along with a hint of one&rsquo;s trans status is all kinds of bad. It is both humiliating and in many cases straight-out illegal under some circumstances.</p>
+
+
+
+<p>You see, when HR changes your status from <em>trial</em> to <em>full time</em> and assigns you to a team, a post is automatically created on an internal blog, welcoming the new staff member. Since before I began, it had always created this post based on the name as it appears in one&rsquo;s passport.</p>
+
+
+
+<p>So one of the first things that the human resources department at a decently sized company that acts like it is so inclusive, has annual diversity training and who&rsquo;s founder acts like he all but invented remote work, was to <em>deadname</em> the trans woman who had just been hired.</p>
+
+
+
+<p>I did not want to look like I was making too much of an issue out of this and pretended to forgive those involved as I felt like I needed to play along and did not want to look like a <em>problem employee</em> on my first day, but of course this was completely inexcusable.</p>
+
+
+
+<h2 class="wp-block-heading">Oh, it gets worse</h2>
+
+
+
+<p>I had been recommended internally by a someone I had known on the community for years and had expected them to catch up with me on my first day and to be assigned as my onboarding buddy &mdash; and I think they already had been.</p>
+
+
+
+<p>By the afternoon on my first day, I had not heard anything from that person. Once I had decided to take the initiative and text them myself, they were not listed on Slack or anywhere internally and those I asked did act like this was a really sensitive subject, almost as if somebody had died.</p>
+
+
+
+<p>This is going to be hard to describe without getting into details, but it wasn&rsquo;t until I looked the person&rsquo;s name up in the internal blog search engine and saw a recent post from the CEO.</p>
+
+
+
+<p>A really bad thing had happened a handful of weeks prior. People were shocked and feeling dreadful over it in the comments. The person had been fired and staff was asked not to communicate much with them and that the legal department would take over from there. (Those who were there at the time are in the know, but I don&rsquo;t fully trust that things were exactly the way they were communicated.)</p>
+
+
+
+<p>I was not informed about this by anyone and finding out what happened this way was a hundred times worse than if somebody within HR or the CEO having some guts and simply giving me a call about this before I had to find things out myself.</p>
+
+
+
+<p>The fact is that I should have been informed and it was a serious blunder not to do so. However, after contacting HR, I was assigned with a new onboarding buddy. (More on that below.)</p>
+
+
+
+<p>While I know we all make mistakes, under circumstances like this, first with the deadnaming and then with the shocking revelation on my first day, the <em>embrace the chaos</em> mantra really started sounding like a broken record.</p>
+
+
+
+<h2 class="wp-block-heading">But what was the work like in the beginning?</h2>
+
+
+
+<p>As with any tech company of its size, Automattic lays out an onboarding plan. A new employee or consultant is expected to get up to speed in certain increments and I was well informed of that. One should be working at a certain capacity after three months, six months and a year &mdash; and when the company is well run and other factors don&rsquo;t creep in, those expectations are fully valid.</p>
+
+
+
+<p>I was placed with one of the best teams, with high average institutional knowledge, friendly teammates, but the huge downside of the rest of the team being distributed across the Americas, making me an outlier in terms of time zones, which made it hard to do things such as pair programming, which was something that they had gotten used to doing.</p>
+
+
+
+<p>When informing my team lead and HR about having a difficult time due to time zone differences, I was told once more to <em>embrace the chaos</em>, which was starting to sound like an insult. As if a lack of devotion on my part was the issue.</p>
+
+
+
+<p>I was also told that a nearby coworker distributed his work hours into the night and was often available at 11 pm and that perhaps I should learn from him, as if I didn&rsquo;t need to have a social life outside of the company Slack. (For context, I had been leading some local social events and meetups before this and had to withdraw from them as Automattic was consuming more of my waking hours.)</p>
+
+
+
+<p>A larger ongoing issue was that the team was going to transition from a backend role into a frontend team, but even if I would never place a new employee in a team undergoing an extensive transition like that, I simply trusted that there was a sound logic to this that I wasn&rsquo;t aware of and that upper management knew what they were doing.</p>
+
+
+
+<p>The messaging that I got was that I really didn&rsquo;t have to learn about all the backend processes as we were going to be finished with them soon after tying some loose ends and that I did not need to be that productive for the first three months anyway, which was another mistake as the team would never shake the ownership of the backend tasks off.</p>
+
+
+
+<p>To emphasise things &mdash; Automattic is not just about WordPress itself and Jetpack and their implementation of both as WordPress.com was a confusing monolith with serious time consuming discrepancies; even to an experienced developer. The Gutenberg project was also far from being in the relatively stable state it is now, so it was far from being trivial to get into, let alone with the Calypso project as an additional abstraction layer on top.</p>
+
+
+
+<p>Meanwhile, I was kept off some of the team&rsquo;s core tasks as those were considered as good as redundant.</p>
+
+
+
+<p>The HR contacts for each team were also rotated company wide shortly after I began. Having just started and then having to rebuild my rapport with HR as a newcomer did not sit right with me and the new HR contact for my team had different ways of handling things than the previous one and had very little insights in my or my team&rsquo;s needs.</p>
+
+
+
+<p>I have expectations for myself at a new workplace or project and the feeling of being lacking due to shortcomings that were above me in the management chain would generally get me to set clear limits or pull out entirely at this point. As the trial period had placed me between a rock and a hard place, I had no realistic means; let alone the leverage to do so by this time.</p>
+
+
+
+<p>But there is always hope. Once I had stayed there for a while, things would be better and I would perhaps be able to contribute to making things better, right?</p>
+
+
+
+<h2 class="wp-block-heading">Arriving at the Grand Meetup</h2>
+
+
+
+<p>For anyone still thinking of applying at Automattic, the so-called <em>Grand Meetup</em> which is held annually at an off-season resort really did not feel like any company retreat I have been to or heard of.</p>
+
+
+
+<p>It is one of those things that are used in the company&rsquo;s recruitment efforts, so an honest insight may be valued by some. I had aimed at starting at Automattic in good time before the event so that I could sort out the flight and finally meet my coworkers in person, many of which I had known for a year by then, which is usually something you get to do every 3 months or so, but only with your own team.</p>
+
+
+
+<p>This year, it was held in and around Disney World (namely Epcot Center) and Universal Studios in Florida, with a Hilton hotel near Disney Springs being used for accommodation and as a conference centre, which sounds amazing on the surface.</p>
+
+
+
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-9d6595d7 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+<figure class="wp-block-image size-full"><img decoding="async" width="2023" height="2022" src="/wp-content/uploads/2023/08/IMG_20180929_133106_677.jpg" alt="" class="wp-image-480" style="aspect-ratio:4/3;object-fit:cover" srcset="/wp-content/uploads/2023/08/IMG_20180929_133106_677.jpg 2023w, /wp-content/uploads/2023/08/IMG_20180929_133106_677-300x300.jpg 300w, /wp-content/uploads/2023/08/IMG_20180929_133106_677-1024x1024.jpg 1024w, /wp-content/uploads/2023/08/IMG_20180929_133106_677-150x150.jpg 150w, /wp-content/uploads/2023/08/IMG_20180929_133106_677-768x768.jpg 768w, /wp-content/uploads/2023/08/IMG_20180929_133106_677-1536x1536.jpg 1536w" sizes="(max-width: 2023px) 100vw, 2023px"><figcaption class="wp-element-caption">This plane would carry me both legs over to Florida from Berlin. There was Wi-Fi onboard at least and I could stop by in Iceland on the way home.</figcaption></figure>
+</div>
+
+
+
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+<figure class="wp-block-image size-full"><img decoding="async" src="/wp-content/uploads/2023/08/IMG_20181002_210231_644.jpg" alt="" class="wp-image-481" style="aspect-ratio:4/3;object-fit:cover"><figcaption class="wp-element-caption">Automattic hired a large portion of Universal Studios for an evening. It did feel great not to have any lines to the rides and being there with friends from work, but it also felt uncanny to spend time in the Harry Potter part as Joanne Rowling was starting to show her true face online.</figcaption></figure>
+</div>
+</div>
+
+
+
+<p>As I was jet lagged and still suffering from anaemia (as my meds were out and my health insurance had lapsed during the trial period), I was picked up by a limo along with a colleague from the airport and brought over to the Hilton near Disney Springs.</p>
+
+
+
+<p>I had been flying all the way from Berlin, with a 30 minute transfer on an airline that did not have a proper meal service. (While this was the most sensible flight to take, many organisations have some policies regarding the booking class for a flight exceeding a certain number of hours, while Automatic simply has a flat upgrade budget, which was far from sufficient.)</p>
+
+
+
+<p>I had been told to expect food, an American SIM card etc. from the company once I arrived at the hotel at around 11 pm but all I got was my hotel key, a lanyard and a conference badge. They had run out of food and they had not gotten enough SIM cards for everyone.</p>
+
+
+
+<p>As I was among the last to arrive, so I had to make do. (I don&rsquo;t think it would have been too difficult to get the SIM card and nutrition at the airport or asking my the driver to stop at CVS or something to pick up some snacks, had I simply been informed about this beforehand as I had Wi-Fi on the plane.)</p>
+
+
+
+<p>Well, the night stand in my room did have a menu from Domino&rsquo;s Pizza and a way to get it delivered to the room in time, but I did not intend to get anaphylaxis and ending up in an American hospital (as I do have fatal food allergies). With my phone having no data connection, it also meant that I could not safely get a Lyft or taxi to get as much as a snack elsewhere.</p>
+
+
+
+<p>But there were free drinks at the bar, just to demonstrate the priorities Automattic has.</p>
+
+
+
+<h2 class="wp-block-heading">Seeing everyone in person</h2>
+
+
+
+<p>The morning after, after being called <em>sir</em> by the hotel maintenance staff several times on the way downstairs and having an awkward small talk with one of the HR developers, I found out that the workshops I had opted to participate in had been cancelled and I was instead shovelled into an iOS development workshop, which was completely unrelated to my job, let alone my interests.</p>
+
+
+
+<p>There were lectures and social events as well, but the whole thing was much more exhausting than one would have realised, even after accounting for my anaemia. The morning lectures and the founder and CEO&rsquo;s keynote in particular felt like I had arrived at an event run by one of those organisations that have a charismatic leader who requires excessive devotion and enforces a set of beliefs that may not always align with the mainstream.</p>
+
+
+
+<p>Perhaps this was just how leadership is done in the US tech industry?</p>
+
+
+
+<p>I got some elaboration on the CEO&rsquo;s jargon-laden and amorphous keynote (which seemed just as ad-libbed and unprepared as one can expect from the guy) and it lead me to find out that there was an internal company sanctioned anonymous forum (think 4Chan or Kiwifarms, but running on WordPress) that was used by certain personalities as a means offloading office politics to somewhere without personal consequences. Something that I would have been fine without.</p>
+
+
+
+<p>There were other morning lectures, including from some military general the CEO liked so much that he included her book in the welcome package and made her a board member. The book still remains unread on my shelf to this day.</p>
+
+
+
+<p>I know this is an American company and all, but seeing the crowd stand up as if the president had just walked in really weirded me out as the whole gathering was starting to remind me of pep talks at multi-level marketing companies. (<em>Hashtag girlboss!</em>)</p>
+
+
+
+<p>Where the hell was I and what had I gotten myself into?</p>
+
+
+
+<p>One thing I wanted to do was to try to spot my new onboarding buddy around the hallways or in the conference crowd and say hi. I&rsquo;m not sure if the guy was trying to avoid me, as he had skipped both the meetings we had scheduled online by then, but we agreed on a time and place to finally see each other and have a chat.</p>
+
+
+
+<p>He didn&rsquo;t show up, but I did get the third onboarding buddy a couple of weeks later. (Third time&rsquo;s the charm, right?)</p>
+
+
+
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-9d6595d7 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+<figure class="wp-block-image size-full"><img decoding="async" src="/wp-content/uploads/2023/08/IMG_20180930_095141_905.jpg" alt="" class="wp-image-482" style="aspect-ratio:4/3;object-fit:cover"><figcaption class="wp-element-caption">The large ground floor conference room. This was the best picture from my own collection that showed some of the crowd without showing any faces.</figcaption></figure>
+</div>
+
+
+
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+<figure class="wp-block-image size-full"><img decoding="async" src="/wp-content/uploads/2023/08/IMG_20181005_221008_802.jpg" alt="" class="wp-image-483" style="aspect-ratio:4/3;object-fit:cover"><figcaption class="wp-element-caption">A fireworks show at Epcot Center after the final party of the week. Pretty epic, fun and all, but I really just wanted to get some rest at this point.</figcaption></figure>
+</div>
+</div>
+
+
+
+<p>The schedule was really tight and as I felt like the iOS development workshop was little but a sham to make me and others look busy or to make this look more a serious business trip and in the end, it did not teach me anything new and useful. (In fact, it destroyed my own development environment badly enough to warrant reinstalling all my Homebrew packages and deleting config files once I made it back to Europe.)</p>
+
+
+
+<p>Regardless, I was happy to finally see my amazing teammates and everyone else I had been working with, people I had touched base with in the WordPress community since the early days, those I had been working along with on the Gutenberg project and some of the LGBTQIA+ crowd that I had gotten friends with for the past year over Slack.</p>
+
+
+
+<p>There were large events held at <em>Universal Studios</em> and <em>Epcot Center</em> that were really enjoyable, but sometimes things can be too much. (I heard later that a lot of people simply go ahead and drink on company dime during all their waking hours and skip the workshops and other things to survive the Grand Meetup, which I didn&rsquo;t assume I would get away with at the time.)</p>
+
+
+
+<p>The thing about the big final event at the Epcot Center was that my brain kept telling me that I needed to get back to the hotel and recover, but as we had been shuttled over there on buses and simply going on foot was impossible, that was not an option.</p>
+
+
+
+<p>At Universal Studios at least, there was a less crowded and noisy area which could have been used for letting people with sensory issues spin down a bit. However, it was occupied by the CEO and others in upper management to make phone calls.</p>
+
+
+
+<p>My trial coordinator used the opportunity to catch up and apologise, which I did accept, as again, I did not want to make too much of a fuss now that I had a job that I wanted to keep.</p>
+
+
+
+<p>One thing that I noticed however, was that a prominent portion of the crowd had those one thousand mile stares that some people associate with <abbr title="post-traumatic stress disorder">PTSD</abbr> and seemed to be completely exhausted. Had they been overworked this badly?</p>
+
+
+
+<p>What I did not realise at the time was that I had the same facial expression. Looking at pictures of myself from that time, it is rather obvious that I needed a long break or to pull out.</p>
+
+
+
+<h2 class="wp-block-heading">And things just kept spiralling</h2>
+
+
+
+<p>My mental health did certainly not recover as I started working full time for Automattic, as I had hoped for. Being overwhelmed is the best way to describe how I was feeling at the Grand Meetup as this was simply too much to chew on right at the start given how things had been going until then.</p>
+
+
+
+<p>I had worked for international organisations before, so I was no stranger to being flown in for a job or attending a conference or a fancy reception, but after having spent more a year in actual poverty, being flown literally out to Disney World and Universal Studios to attend what seemed like a faith-based event on my third week did not hit me in a positive way.</p>
+
+
+
+<p>Given everything that had gone on by now, one may start to understand how my fuse was getting shorter and shorter over time along with my work capacity. Having a four day stopover with family and friends in Iceland after the Grand Meetup was a good decision and did calm my nerves, but in retrospective I think I should have taken a longer break.</p>
+
+
+
+<h2 class="wp-block-heading">Seeing things in the rear view mirror</h2>
+
+
+
+<p>This is one of the things that are much more visible in retrospective, but a competent and experienced HR department could have been able to spot the red flags and prevent things from going worse. I also think if everyone, especially those in charge, had done their job, I had gotten a more appropriate team placement, a break for a couple of weeks in the beginning and perhaps a fair signing bonus to make up for the unusually long and awfully managed trial period, things may have turned out better.</p>
+
+
+
+<p>The very nature of many mental health issues is that it is often impossible for those experiencing them to quantify them and to realise how bad things really are, especially when you&rsquo;re being told that everything is fine. This is why it is extremely important for HR and management, especially in a remote and distributed setting, to eye these things out before they go out of control.</p>
+
+
+
+<p>The advice given by the company and its HR department were essentially about changing one&rsquo;s environment, working from a caf&eacute; or creating a morning commute of sorts.</p>
+
+
+
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-9d6595d7 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+<figure class="wp-block-image size-full"><img decoding="async" src="/wp-content/uploads/2023/08/IMG_20181010_140639797.jpg" alt="" class="wp-image-486"><figcaption class="wp-element-caption">Working from a caf&eacute; during my stopover, but still depressed. Perhaps I wasn&rsquo;t embracing the chaos enough. Perhaps I should have walked out.</figcaption></figure>
+</div>
+
+
+
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+<figure class="wp-block-image size-full"><img decoding="async" width="1944" height="1944" src="/wp-content/uploads/2023/08/IMG_20180929_163132_106.jpg" alt="" class="wp-image-510" style="aspect-ratio:4/3;object-fit:cover" srcset="/wp-content/uploads/2023/08/IMG_20180929_163132_106.jpg 1944w, /wp-content/uploads/2023/08/IMG_20180929_163132_106-300x300.jpg 300w, /wp-content/uploads/2023/08/IMG_20180929_163132_106-1024x1024.jpg 1024w, /wp-content/uploads/2023/08/IMG_20180929_163132_106-150x150.jpg 150w, /wp-content/uploads/2023/08/IMG_20180929_163132_106-768x768.jpg 768w, /wp-content/uploads/2023/08/IMG_20180929_163132_106-1536x1536.jpg 1536w" sizes="(max-width: 1944px) 100vw, 1944px"><figcaption class="wp-element-caption">This is not a happy bunny.</figcaption></figure>
+</div>
+</div>
+
+
+
+<p>While we are all responsible for our own wellbeing under normal circumstances, those employing people in physically demanding jobs are responsible for and should invest in the physical health and wellbeing of their staff, just like tech companies are responsible for and should invest in the mental wellbeing of theirs.</p>
+
+
+
+<p>A carpenter with a slipped disc is hardly able to perform their work duties and the solution to that is not to send in more khaki wearing consultants from the insurance company to teach everyone how to <em>put weight on your knees but not your back</em> &mdash; just like the solution to actual mental health issues that are caused by the employer&rsquo;s shortcomings is not to tell the people to change their environment or to have a morning walk before starting work &mdash; let alone to just <em>embrace the chaos</em>.</p>
+
+
+
+<p>Just like mindfulness does not heal broken bones, those are passive and potentially pre-emptive self help solutions that may be good general advice on their own, but they will not suffice once things have gone sour and in a more cynical sense, this is a way companies go about victimising those who work the hardest for them. (Which explains the thousand mile stares at the Grand Meetup.)</p>
+
+
+
+<h2 class="wp-block-heading">More to come</h2>
+
+
+
+<p>This does not conclude my story.</p>
+
+
+
+<p>I will post the next post in this series by next Friday and will reflect on the rest of my brief career at Automattic and begin to put certain things into a broader context, perhaps in a less linear way.</p>
+</div>
+    </article>
+
+
+
+    <aside class="wp-block-group author-info is-layout-flow wp-block-group-is-layout-flow">
+    <div class="wp-block-post-author has-medium-font-size"><div class="wp-block-post-author__avatar"><img alt="" src="https://secure.gravatar.com/avatar/4ccdaeb5f30a50947d0a51a9d347be281d1885d1cdd10e8180640b7dff557749?s=192&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/4ccdaeb5f30a50947d0a51a9d347be281d1885d1cdd10e8180640b7dff557749?s=384&amp;d=mm&amp;r=g 2x" class="avatar avatar-192 photo" height="192" width="192" loading="lazy" decoding="async"></div><div class="wp-block-post-author__content"><p class="wp-block-post-author__name">Alda Vigd&iacute;s Skarph&eacute;&eth;insd&oacute;ttir</p><p class="wp-block-post-author__bio">Having made things for the web since the 90&rsquo;s, Alda has found herself in the position of being a jack of all trades when it comes to full stack web development and system operations. She&rsquo;s currently consulting in the hosting sector and open to new opportunities.</p></div></div>
+    </aside>
+
+
+<div class="site-footer wp-block-template-part">
+    <footer class="wp-block-group has-s-font-size is-layout-constrained wp-block-group-is-layout-constrained">
+    <p class="has-s-font-size">
+        This is a project by
+        <a href="https://aldavigdis.is/" target="_blank">Alda Vigd&iacute;s</a>.
+    </p>
+    
+    </footer>
+
+</div>
+</div>
+<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"\/*"},{"not":{"href_matches":["\/wp-*.php","\/wp-admin\/*","\/wp-content\/uploads\/*","\/wp-content\/*","\/wp-content\/plugins\/*","\/wp-content\/themes\/aldatheme\/*","\/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+<script id="wp-block-template-skip-link-js-after">
+	( function() {
+		var skipLinkTarget = document.querySelector( 'main' ),
+			sibling,
+			skipLinkTargetID,
+			skipLink;
+
+		// Early exit if a skip-link target can't be located.
+		if ( ! skipLinkTarget ) {
+			return;
+		}
+
+		/*
+		 * Get the site wrapper.
+		 * The skip-link will be injected in the beginning of it.
+		 */
+		sibling = document.querySelector( '.wp-site-blocks' );
+
+		// Early exit if the root element was not found.
+		if ( ! sibling ) {
+			return;
+		}
+
+		// Get the skip-link target's ID, and generate one if it doesn't exist.
+		skipLinkTargetID = skipLinkTarget.id;
+		if ( ! skipLinkTargetID ) {
+			skipLinkTargetID = 'wp--skip-link--target';
+			skipLinkTarget.id = skipLinkTargetID;
+		}
+
+		// Create the skip link.
+		skipLink = document.createElement( 'a' );
+		skipLink.classList.add( 'skip-link', 'screen-reader-text' );
+		skipLink.id = 'wp-skip-link';
+		skipLink.href = '#' + skipLinkTargetID;
+		skipLink.innerText = 'Skip to content';
+
+		// Inject the skip link.
+		sibling.parentElement.insertBefore( skipLink, sibling );
+	}() );
+	
+</script>
+</body>
+</html>
